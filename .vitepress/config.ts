@@ -28,16 +28,18 @@ export default defineConfig({
           text: '技术学习',
           collapsed: false,
           items: [
-            { text: 'Java & Spring Boot', link: '/posts/categories/tech/' },
-            { text: '前端开发', link: '/posts/categories/tech/' },
-            { text: '数据库', link: '/posts/categories/tech/' },
+            { text: 'Hello Blog', link: '/posts/tech/hello-blog' },
+            { text: 'Spring Boot 入门指南', link: '/posts/tech/spring-boot-guide' },
+            { text: 'Vue 3 组合式 API', link: '/posts/tech/vue3-composition-api' },
+            { text: 'MySQL 索引优化', link: '/posts/tech/mysql-index-optimization' },
+            { text: 'Git 常用命令', link: '/posts/tech/git-commands' },
           ]
         },
         {
           text: '项目实战',
           collapsed: false,
           items: [
-            { text: '项目记录', link: '/posts/categories/project/' },
+            { text: '酒店管理系统', link: '/posts/project/hotel-management' },
           ]
         },
         {
