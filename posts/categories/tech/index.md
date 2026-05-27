@@ -10,90 +10,53 @@ layout: doc
 
 ## 最新文章
 
-<div class="post-item">
-  <div class="post-title">
-    <a href="/posts/tech/hello-blog">Hello Blog - 我的第一篇博客</a>
-  </div>
-  <div class="post-meta">
-    <span>📅 2026-05-27</span>
-    <span>⏱️ 5 分钟</span>
-  </div>
-  <div class="post-summary">
-    这是我的第一篇博客文章，记录博客搭建的过程和初衷。
-  </div>
-  <div class="post-tags">
-    <a class="tag" href="/posts/tags/博客">博客</a>
-    <a class="tag" href="/posts/tags/VitePress">VitePress</a>
-  </div>
-</div>
+### [Hello Blog - 我的第一篇博客](/posts/tech/hello-blog)
 
-<div class="post-item">
-  <div class="post-title">
-    <a href="/posts/tech/spring-boot-guide">Spring Boot 入门指南</a>
-  </div>
-  <div class="post-meta">
-    <span>📅 2026-05-26</span>
-    <span>⏱️ 10 分钟</span>
-  </div>
-  <div class="post-summary">
-    Spring Boot 快速入门教程，从零开始搭建第一个 Spring Boot 应用。
-  </div>
-  <div class="post-tags">
-    <a class="tag" href="/posts/tags/Spring-Boot">Spring Boot</a>
-    <a class="tag" href="/posts/tags/Java">Java</a>
-  </div>
-</div>
+📅 2026-05-27 · ⏱️ 5 分钟
 
-<div class="post-item">
-  <div class="post-title">
-    <a href="/posts/tech/vue3-composition-api">Vue 3 组合式 API 详解</a>
-  </div>
-  <div class="post-meta">
-    <span>📅 2026-05-25</span>
-    <span>⏱️ 12 分钟</span>
-  </div>
-  <div class="post-summary">
-    Vue 3 组合式 API 完全指南，包含 setup、ref、reactive、computed 等核心概念。
-  </div>
-  <div class="post-tags">
-    <a class="tag" href="/posts/tags/Vue-3">Vue 3</a>
-    <a class="tag" href="/posts/tags/前端">前端</a>
-  </div>
-</div>
+这是我的第一篇博客文章，记录博客搭建的过程和初衷。
 
-<div class="post-item">
-  <div class="post-title">
-    <a href="/posts/tech/mysql-index-optimization">MySQL 索引优化实践</a>
-  </div>
-  <div class="post-meta">
-    <span>📅 2026-05-24</span>
-    <span>⏱️ 15 分钟</span>
-  </div>
-  <div class="post-summary">
-    MySQL 索引优化详解，包含索引类型、创建原则、性能分析等内容。
-  </div>
-  <div class="post-tags">
-    <a class="tag" href="/posts/tags/MySQL">MySQL</a>
-    <a class="tag" href="/posts/tags/性能优化">性能优化</a>
-  </div>
-</div>
+`博客` `VitePress`
 
-<div class="post-item">
-  <div class="post-title">
-    <a href="/posts/tech/git-commands">Git 常用命令速查</a>
-  </div>
-  <div class="post-meta">
-    <span>📅 2026-05-23</span>
-    <span>⏱️ 8 分钟</span>
-  </div>
-  <div class="post-summary">
-    Git 常用命令速查表，包含日常开发中最常用的 Git 操作。
-  </div>
-  <div class="post-tags">
-    <a class="tag" href="/posts/tags/Git">Git</a>
-    <a class="tag" href="/posts/tags/开发工具">开发工具</a>
-  </div>
-</div>
+---
+
+### [Spring Boot 入门指南](/posts/tech/spring-boot-guide)
+
+📅 2026-05-26 · ⏱️ 10 分钟
+
+Spring Boot 快速入门教程，从零开始搭建第一个 Spring Boot 应用。
+
+`Spring Boot` `Java`
+
+---
+
+### [Vue 3 组合式 API 详解](/posts/tech/vue3-composition-api)
+
+📅 2026-05-25 · ⏱️ 12 分钟
+
+Vue 3 组合式 API 完全指南，包含 setup、ref、reactive、computed 等核心概念。
+
+`Vue 3` `前端`
+
+---
+
+### [MySQL 索引优化实践](/posts/tech/mysql-index-optimization)
+
+📅 2026-05-24 · ⏱️ 15 分钟
+
+MySQL 索引优化详解，包含索引类型、创建原则、性能分析等内容。
+
+`MySQL` `性能优化`
+
+---
+
+### [Git 常用命令速查](/posts/tech/git-commands)
+
+📅 2026-05-23 · ⏱️ 8 分钟
+
+Git 常用命令速查表，包含日常开发中最常用的 Git 操作。
+
+`Git` `开发工具`
 
 ---
 
