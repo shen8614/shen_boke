@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   base: '/shen_boke/',
-  title: '沈同学的博客',
+  title: 'shen的博客',
   description: '记录技术学习、项目实战与生活感悟',
   lang: 'zh-CN',
   lastUpdated: true,
@@ -13,7 +13,7 @@ export default defineConfig({
 
   themeConfig: {
     logo: '/logo.svg',
-    siteTitle: '沈同学的博客',
+    siteTitle: 'shen的博客',
     
     nav: [
       { text: '首页', link: '/' },
@@ -56,7 +56,7 @@ export default defineConfig({
 
     footer: {
       message: '用 VitePress 搭建',
-      copyright: '© 2026 沈同学'
+      copyright: '© 2026 shen'
     },
 
     outline: {
