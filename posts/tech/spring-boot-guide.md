@@ -16,7 +16,7 @@ description: Spring Boot 快速入门教程，从零开始搭建第一个 Spring
 
 Spring Boot 是 Spring 框架的扩展，它简化了 Spring 应用的创建和开发过程。通过 Spring Boot，你可以快速创建独立的、生产级的 Spring 应用程序。
 
-![Spring Boot Logo](https://spring.io/images/spring-logo.svg)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2.0-green?logo=spring-boot)
 
 ## 为什么选择 Spring Boot？
 
