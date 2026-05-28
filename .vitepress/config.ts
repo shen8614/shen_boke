@@ -10,7 +10,7 @@ export default withMermaid(
     lastUpdated: true,
     
     head: [
-      ['link', { rel: 'icon', href: '/favicon.ico' }],
+      ['link', { rel: 'icon', type: 'image/svg+xml', href: '/shen_boke/favicon.svg' }],
     ],
 
     themeConfig: {
@@ -85,7 +85,19 @@ export default withMermaid(
     },
 
     mermaid: {
-      theme: 'default',
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#e0e7ff',
+        primaryTextColor: '#312e81',
+        primaryBorderColor: '#818cf8',
+        lineColor: '#a5b4fc',
+        secondaryColor: '#dbeafe',
+        tertiaryColor: '#f0fdf4',
+        fontFamily: 'system-ui, -apple-system, sans-serif',
+        fontSize: '14px',
+        noteBkgColor: '#fef3c7',
+        noteTextColor: '#92400e',
+      },
     },
   })
 )
