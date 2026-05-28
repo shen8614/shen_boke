@@ -160,21 +160,18 @@
 
 <!-- ===== CROSS-COLUMN RELATIONSHIPS (horizontal, no crossing) ===== -->
 
-<!-- 客房 --分配--> 预订 (horizontal, row between col1 and col2) -->
 <line x1="190" y1="359" x2="420" y2="219" stroke="#9ca3af" stroke-width="1.1"/>
 <polygon points="290,275 310,289 290,303 270,289" fill="#fce7f3" stroke="#ec4899" stroke-width="1.2"/>
 <text x="290" y="293" text-anchor="middle" font-size="9" fill="#9d174d" font-style="italic">分配</text>
 <text x="210" y="340" font-size="10" font-weight="700" fill="#dc2626">1</text>
 <text x="400" y="230" font-size="10" font-weight="700" fill="#dc2626">N</text>
 
-<!-- 入住登记 --产生--> 消费记录 (horizontal, same row) -->
 <line x1="530" y1="359" x2="760" y2="219" stroke="#9ca3af" stroke-width="1.1"/>
 <polygon points="640,275 660,289 640,303 620,289" fill="#fce7f3" stroke="#ec4899" stroke-width="1.2"/>
 <text x="640" y="293" text-anchor="middle" font-size="9" fill="#9d174d" font-style="italic">产生</text>
 <text x="550" y="340" font-size="10" font-weight="700" fill="#dc2626">N</text>
 <text x="740" y="230" font-size="10" font-weight="700" fill="#dc2626">N</text>
 
-<!-- 入住登记 --结算--> 账单 (same column, already connected via chain) -->
 
 <!-- ===== ROW 4: 员工 (right side, connected to 入住登记) ===== -->
 <!-- 员工 -->
