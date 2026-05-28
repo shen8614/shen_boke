@@ -26,6 +26,36 @@ features:
 
 ## 最新文章
 
+### [Claude Code：Anthropic 的终端 Coding Agent](/posts/tech/claude-code)
+
+📅 2026-05-24 · 📁 技术学习 · ⏱️ 12 分钟
+
+深入介绍 Claude Code 的核心功能、安装部署与使用体验。
+
+`AI Agent` `Claude Code` `Anthropic`
+
+---
+
+### [Codex：OpenAI 的沙箱 Coding Agent](/posts/tech/codex)
+
+📅 2026-05-24 · 📁 技术学习 · ⏱️ 10 分钟
+
+深入介绍 Codex 的核心功能、安装部署与使用体验。
+
+`AI Agent` `Codex` `OpenAI`
+
+---
+
+### [Hermes Agent：全功能自治代理框架](/posts/tech/hermes-agent)
+
+📅 2026-05-24 · 📁 技术学习 · ⏱️ 15 分钟
+
+深入介绍 Hermes Agent 的核心功能、安装部署与使用体验。
+
+`AI Agent` `Hermes` `自动化`
+
+---
+
 ### [Hermes Agent 深度体验：不只是 Coding Agent](/posts/tech/hermes-agent-review)
 
 📅 2026-05-25 · 📁 技术学习 · ⏱️ 12 分钟
@@ -36,16 +66,6 @@ features:
 
 ---
 
-### [AI Coding Agent 终极对比](/posts/tech/ai-coding-agents)
-
-📅 2026-05-24 · 📁 技术学习 · ⏱️ 15 分钟
-
-Claude Code vs Codex vs OpenCode vs Hermes Agent 深度对比。
-
-`AI Agent` `Claude Code` `Codex`
-
----
-
 ### [本地大模型部署实战：Ollama + Open WebUI](/posts/tech/local-llm-deployment)
 
 📅 2026-05-23 · 📁 技术学习 · ⏱️ 12 分钟
@@ -53,36 +73,6 @@ Claude Code vs Codex vs OpenCode vs Hermes Agent 深度对比。
 在本地跑大模型的完整指南，从 Ollama 安装到 Open WebUI 配置。
 
 `LLM` `Ollama`
-
----
-
-### [MCP 协议：AI 工具集成的新标准](/posts/tech/mcp-protocol)
-
-📅 2026-05-22 · 📁 技术学习 · ⏱️ 10 分钟
-
-理解 Model Context Protocol 的设计理念和实际应用。
-
-`MCP` `协议`
-
----
-
-### [AI Agent 开发实践：从概念到落地](/posts/tech/ai-agent-development)
-
-📅 2026-05-21 · 📁 技术学习 · ⏱️ 12 分钟
-
-记录 AI Agent 的开发经验，从工具调用到多智能体协作。
-
-`AI Agent` `LLM`
-
----
-
-### [酒店客房管理系统开发记录](/posts/project/hotel-management)
-
-📅 2026-05-22 · 📁 项目实战 · ⏱️ 20 分钟
-
-连锁酒店客房管理系统全栈项目开发记录。
-
-`Spring Boot` `Vue 3` `项目实战`
 
 ---
 
