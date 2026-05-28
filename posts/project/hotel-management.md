@@ -36,29 +36,48 @@ description: 连锁酒店客房管理系统全栈项目开发记录，包含技�
 
 ## 系统架构
 
-```
-┌─────────────────────────────────────────────────────┐
-│                   前端 (Vue 3)                        │
-│  ├── Login.vue          统一登录页                     │
-│  ├── admin/             管理员模块 (8 页面)             │
-│  ├── reception/         前台模块 (6 页面)              │
-│  └── guest/             客人模块 (3 页面)              │
-├─────────────────────────────────────────────────────┤
-│  Axios ←── /api/*, /uploads/* ──→  JWT 认证拦截器     │
-├─────────────────────────────────────────────────────┤
-│                   后端 (Spring Boot)                   │
-│  ├── controller/        13 个 REST 控制器              │
-│  ├── service/           12 个业务服务                   │
-│  ├── mapper/            12 个 MyBatis 映射器            │
-│  ├── entity/            11 个实体类                    │
-│  ├── config/            JWT / 拦截器 / 静态资源配置     │
-│  └── uploads/           上传图片存储目录                │
-├─────────────────────────────────────────────────────┤
-│                   数据库 (MySQL)                       │
-│  11 张表：stores, room_types, rooms, guests,          │
-│  roles, staff, reservations, checkins,                │
-│  consumption_items, consumption, bills                │
-└─────────────────────────────────────────────────────┘
+```mermaid
+graph TB
+    subgraph Frontend[前端 Vue 3]
+        Login[登录页]
+        Admin[管理员模块<br/>8 页面]
+        Reception[前台模块<br/>6 页面]
+        Guest[客人模块<br/>3 页面]
+    end
+
+    subgraph Gateway[网关层]
+        Axios[Axios HTTP]
+        JWT[JWT 认证拦截器]
+    end
+
+    subgraph Backend[后端 Spring Boot]
+        Auth[AuthController]
+        Store[StoreController]
+        Room[RoomController]
+        Reserv[ReservationController]
+        Check[CheckinController]
+        Bill[BillController]
+        Stat[StatisticsController]
+        Upload[UploadController]
+    end
+
+    subgraph Data[数据层]
+        MySQL[(MySQL<br/>11 张表)]
+        Redis[(Redis<br/>缓存)]
+        Files[文件存储<br/>uploads/]
+    end
+
+    Frontend --> Axios
+    Axios --> JWT
+    JWT --> Backend
+    Backend --> MySQL
+    Backend --> Redis
+    Backend --> Files
+
+    style Frontend fill:#e8f4fd,stroke:#4a9eff
+    style Gateway fill:#fff3e0,stroke:#ff9f43
+    style Backend fill:#e8fdf5,stroke:#2ed573
+    style Data fill:#f3e8fd,stroke:#9b59b6
 ```
 
 ## 三种角色与权限设计
@@ -128,19 +147,64 @@ description: 连锁酒店客房管理系统全栈项目开发记录，包含技�
 
 系统共 11 张核心表，关系如下：
 
-```
-stores ──1:N── room_types ──1:N── rooms
-  │                                  │
-  │                                  ├── reservations (客人预订)
-  │                                  │
-  └── staff ──┐                      ├── checkins (入住登记)
-              │                      │
-  roles ──────┘                      ├── consumption (消费记录)
-                                     │
-  guests ────────────────────────────┤
-                                     ├── bills (账单)
-                                     │
-  consumption_items ─────────────────┘
+```mermaid
+erDiagram
+    stores ||--o{ room_types : "拥有"
+    stores ||--o{ rooms : "拥有"
+    stores ||--o{ staff : "雇佣"
+    room_types ||--o{ rooms : "属于"
+    roles ||--o{ staff : "分配"
+    guests ||--o{ reservations : "预订"
+    guests ||--o{ checkins : "入住"
+    rooms ||--o{ reservations : "被预订"
+    rooms ||--o{ checkins : "被入住"
+    reservations ||--o| checkins : "转入住"
+    checkins ||--o{ consumption : "消费"
+    consumption_items ||--o{ consumption : "被消费"
+    checkins ||--|| bills : "结算"
+    staff ||--o{ checkins : "登记"
+    staff ||--o{ bills : "处理"
+
+    stores {
+        int store_id PK
+        varchar store_name
+        varchar address
+        varchar phone
+    }
+    rooms {
+        int room_id PK
+        varchar room_number
+        int type_id FK
+        int store_id FK
+        enum status
+    }
+    guests {
+        int guest_id PK
+        varchar name
+        varchar phone
+        varchar password
+    }
+    reservations {
+        int reservation_id PK
+        int guest_id FK
+        int room_id FK
+        date checkin_date
+        enum status
+    }
+    checkins {
+        int checkin_id PK
+        int reservation_id FK
+        int guest_id FK
+        int room_id FK
+        datetime checkin_time
+        enum status
+    }
+    bills {
+        int bill_id PK
+        int checkin_id FK
+        decimal total_charge
+        enum payment_method
+    }
 ```
 
 ### 核心表结构

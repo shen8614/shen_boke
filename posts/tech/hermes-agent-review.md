@@ -15,6 +15,54 @@ description: 使用 Hermes Agent 三个月的真实体验，从终端编程到�
 
 ## 为什么选 Hermes
 
+```mermaid
+graph TB
+    subgraph Hermes[Hermes Agent 核心]
+        CORE[Agent 引擎]
+        MEM[持久记忆]
+        SKILL[技能系统]
+        CRON[定时调度]
+    end
+
+    subgraph Platforms[接入平台]
+        CLI[终端 CLI]
+        TG[Telegram]
+        QQ[QQ Bot]
+        DC[Discord]
+        SL[Slack]
+        WX[微信]
+    end
+
+    subgraph Capabilities[能力]
+        CODE[代码读写]
+        SHELL[Shell 执行]
+        WEB[网页搜索]
+        FILE[文件操作]
+        IMG[图片分析]
+        TTS[语音合成]
+    end
+
+    subgraph LLM_Providers[模型 Provider]
+        DS[DeepSeek]
+        OA[OpenAI]
+        AN[Anthropic]
+        LOCAL[本地模型]
+        OR[OpenRouter]
+    end
+
+    Platforms --> CORE
+    CORE --> LLM_Providers
+    CORE --> Capabilities
+    MEM --> CORE
+    SKILL --> CORE
+    CRON --> CORE
+
+    style Hermes fill:#e8f4fd,stroke:#4a9eff
+    style Platforms fill:#fff3e0,stroke:#ff9f43
+    style Capabilities fill:#e8fdf5,stroke:#2ed573
+    style LLM_Providers fill:#f3e8fd,stroke:#9b59b6
+```
+
 市面上的 AI Coding Agent 大多只做一件事——在终端里帮你写代码。Claude Code 写代码很强，Codex 沙箱执行很安全，OpenCode 模型选择很灵活。但我的需求不只是写代码：我希望 AI 能帮我管理定时任务、在 QQ 上回答问题、自动监控 GitHub 仓库、甚至控制智能家居。
 
 Hermes Agent 是我找到的唯一一个能满足这些需求的工具。它不是一个 Coding Agent，而是一个通用的 AI 自治代理框架——Coding 只是它的能力之一。

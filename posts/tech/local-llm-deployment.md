@@ -15,6 +15,34 @@ description: 在本地跑大模型的完整指南，从 Ollama 安装到 Open We
 
 ## 为什么要本地部署
 
+```mermaid
+graph LR
+    subgraph Cloud[云端 API]
+        CA[OpenAI API]
+        CB[Anthropic API]
+        CC[DeepSeek API]
+    end
+
+    subgraph Local[本地部署]
+        LA[Ollama]
+        LB[Open WebUI]
+        LC[本地模型]
+    end
+
+    subgraph Pros[本地优势]
+        P1[🔒 数据隐私]
+        P2[💰 零成本]
+        P3[📶 离线可用]
+        P4[⚡ 低延迟]
+    end
+
+    Local --> Pros
+
+    style Local fill:#e8fdf5,stroke:#2ed573
+    style Cloud fill:#ffeaa7,stroke:#fdcb6e
+    style Pros fill:#dfe6e9,stroke:#636e72
+```
+
 云端 API 方便，但有几个绕不开的问题：数据隐私（公司代码不想发到第三方服务器）、成本（大量调用时 API 费用很高）、离线需求（没网的时候也要能用）。本地部署大模型就是为了解决这些问题。
 
 2026 年的开源模型质量已经有了质的飞跃。Llama 3.3、Qwen 2.5、DeepSeek V3、Mistral Large 等模型在很多任务上已经接近甚至超过 GPT-4。配合量化技术，7B 参数的模型在普通笔记本上就能流畅运行。

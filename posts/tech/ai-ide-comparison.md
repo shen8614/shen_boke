@@ -15,6 +15,28 @@ description: 深度对比三款主流 AI IDE 的实际使用体验，从代码�
 
 ## 为什么需要 AI IDE
 
+```mermaid
+graph LR
+    subgraph Before[传统开发]
+        B1[写代码] --> B2[查文档]
+        B2 --> B3[搜 StackOverflow]
+        B3 --> B4[复制粘贴]
+        B4 --> B5[调试]
+    end
+
+    subgraph After[AI IDE 开发]
+        A1[描述需求] --> A2[AI 生成代码]
+        A2 --> A3[AI 自动测试]
+        A3 --> A4[AI 修复问题]
+        A4 --> A5[完成]
+    end
+
+    Before -.->|AI IDE 革命| After
+
+    style Before fill:#ffeaa7,stroke:#fdcb6e
+    style After fill:#dfe6e9,stroke:#636e72
+```
+
 写代码这件事在 2026 年已经和两年前完全不同了。AI 不再只是帮你补全一行代码，而是能读懂整个项目上下文、跨文件重构、写测试、甚至帮你 debug。三款主流 AI IDE——Cursor、Windsurf 和 VS Code + Copilot——都在争夺"开发者主力编辑器"的位置。我用它们各写了一个月以上的代码，记录一下真实感受。
 
 ## Cursor：为 AI 而生的编辑器

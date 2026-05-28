@@ -23,6 +23,20 @@ description: 记录 AI Agent 的开发经验，从工具调用到多智能体协
 
 一个最小可用的 Agent 需要三个组件：
 
+```mermaid
+graph TD
+    USER[用户任务] --> LLM[LLM 大脑]
+    LLM -->|思考 + 决策| ACT[行动]
+    ACT --> TOOL[调用工具]
+    TOOL -->|返回结果| OBS[观察结果]
+    OBS -->|反馈| LLM
+    LLM -->|任务完成| RESULT[输出结果]
+
+    style LLM fill:#4a9eff,color:#fff
+    style TOOL fill:#ff9f43,color:#fff
+    style OBS fill:#2ed573,color:#fff
+```
+
 1. **LLM 大脑** — 负责理解任务、推理、决策
 2. **工具集** — Agent 可以调用的能力（搜索、代码执行、文件操作等）
 3. **循环机制** — 观察环境 → 思考 → 行动 → 观察结果 → 继续思考

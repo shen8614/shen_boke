@@ -22,6 +22,27 @@ description: 五款主流 AI Coding Agent 的深度对比，从架构设计到�
 
 ## 选手介绍
 
+```mermaid
+graph LR
+    subgraph Anthropic
+        CC[Claude Code<br/>Claude 模型]
+    end
+    subgraph OpenAI
+        CX[Codex<br/>codex-1 模型]
+    end
+    subgraph 开源社区
+        OC[OpenCode<br/>多 Provider]
+        HA[Hermes Agent<br/>20+ Provider]
+    end
+    CC -->|终端 + IDE| DEV[开发者]
+    CX -->|沙箱执行| DEV
+    OC -->|灵活选模型| DEV
+    HA -->|终端 + 消息 + 定时| DEV
+    HA -->|网关| TG[Telegram]
+    HA -->|网关| QQ[QQ/微信]
+    HA -->|网关| DC[Discord]
+```
+
 ### Claude Code（Anthropic）
 
 Anthropic 出品的终端 Coding Agent，基于 Claude 模型。核心理念是"一个能在终端里做任何事的 AI"。
