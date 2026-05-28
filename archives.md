@@ -13,11 +13,11 @@ layout: doc
 ### 5 月
 
 - **05-27** [Hello Blog - 我的第一篇博客](/posts/tech/hello-blog)
-- **05-26** [Spring Boot 入门指南](/posts/tech/spring-boot-guide)
-- **05-25** [Vue 3 组合式 API 详解](/posts/tech/vue3-composition-api)
-- **05-24** [MySQL 索引优化实践](/posts/tech/mysql-index-optimization)
-- **05-23** [Git 常用命令速查](/posts/tech/git-commands)
+- **05-23** [本地大模型部署实战：Ollama + Open WebUI](/posts/tech/local-llm-deployment)
+- **05-22** [MCP 协议：AI 工具集成的新标准](/posts/tech/mcp-protocol)
 - **05-22** [酒店客房管理系统开发记录](/posts/project/hotel-management)
+- **05-21** [AI Agent 开发实践：从概念到落地](/posts/tech/ai-agent-development)
+- **05-20** [AI IDE 横评：Cursor、Windsurf 与 VS Code Copilot](/posts/tech/ai-ide-comparison)
 
 ---
 

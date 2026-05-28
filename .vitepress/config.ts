@@ -29,10 +29,10 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: 'Hello Blog', link: '/posts/tech/hello-blog' },
-            { text: 'Spring Boot 入门指南', link: '/posts/tech/spring-boot-guide' },
-            { text: 'Vue 3 组合式 API', link: '/posts/tech/vue3-composition-api' },
-            { text: 'MySQL 索引优化', link: '/posts/tech/mysql-index-optimization' },
-            { text: 'Git 常用命令', link: '/posts/tech/git-commands' },
+            { text: 'AI IDE 横评', link: '/posts/tech/ai-ide-comparison' },
+            { text: 'AI Agent 开发实践', link: '/posts/tech/ai-agent-development' },
+            { text: 'MCP 协议', link: '/posts/tech/mcp-protocol' },
+            { text: '本地大模型部署', link: '/posts/tech/local-llm-deployment' },
           ]
         },
         {

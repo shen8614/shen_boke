@@ -13,9 +13,9 @@ hero:
       link: /about
 
 features:
-  - icon: 💻
-    title: 技术学习
-    details: Java、Spring Boot、Vue、MySQL 等技术栈的学习笔记与总结
+  - icon: 🤖
+    title: AI 前沿
+    details: AI IDE、AI Agent、MCP 协议、大模型部署等前沿技术实践
   - icon: 🚀
     title: 项目实战
     details: 从零到一的项目开发记录，踩坑经验与解决方案
@@ -26,43 +26,43 @@ features:
 
 ## 最新文章
 
-### [Hello Blog - 我的第一篇博客](/posts/tech/hello-blog)
+### [AI IDE 横评：Cursor、Windsurf 与 VS Code Copilot](/posts/tech/ai-ide-comparison)
 
-📅 2026-05-27 · 📁 技术学习 · ⏱️ 5 分钟
+📅 2026-05-20 · 📁 技术学习 · ⏱️ 10 分钟
 
-这是我的第一篇博客文章，记录博客搭建的过程和初衷。
+深度对比三款主流 AI IDE 的实际使用体验，从代码补全到 Agent 能力。
 
-`博客` `VitePress`
-
----
-
-### [Spring Boot 入门指南](/posts/tech/spring-boot-guide)
-
-📅 2026-05-26 · 📁 技术学习 · ⏱️ 10 分钟
-
-Spring Boot 快速入门教程，从零开始搭建第一个 Spring Boot 应用。
-
-`Spring Boot` `Java`
+`AI` `IDE` `Cursor`
 
 ---
 
-### [Vue 3 组合式 API 详解](/posts/tech/vue3-composition-api)
+### [AI Agent 开发实践：从概念到落地](/posts/tech/ai-agent-development)
 
-📅 2026-05-25 · 📁 技术学习 · ⏱️ 12 分钟
+📅 2026-05-21 · 📁 技术学习 · ⏱️ 12 分钟
 
-Vue 3 组合式 API 完全指南，包含 setup、ref、reactive、computed 等核心概念。
+记录 AI Agent 的开发经验，从工具调用到多智能体协作，以及实际踩过的坑。
 
-`Vue 3` `前端`
+`AI Agent` `LLM`
 
 ---
 
-### [MySQL 索引优化实践](/posts/tech/mysql-index-optimization)
+### [MCP 协议：AI 工具集成的新标准](/posts/tech/mcp-protocol)
 
-📅 2026-05-24 · 📁 技术学习 · ⏱️ 15 分钟
+📅 2026-05-22 · 📁 技术学习 · ⏱️ 10 分钟
 
-MySQL 索引优化详解，包含索引类型、创建原则、性能分析等内容。
+理解 Model Context Protocol 的设计理念和实际应用。
 
-`MySQL` `性能优化`
+`MCP` `协议`
+
+---
+
+### [本地大模型部署实战：Ollama + Open WebUI](/posts/tech/local-llm-deployment)
+
+📅 2026-05-23 · 📁 技术学习 · ⏱️ 12 分钟
+
+在本地跑大模型的完整指南，从 Ollama 安装到 Open WebUI 配置。
+
+`LLM` `Ollama`
 
 ---
 
