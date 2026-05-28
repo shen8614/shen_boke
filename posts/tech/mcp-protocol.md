@@ -25,39 +25,19 @@ Anthropic 在 2024 年底提出了 MCP（Model Context Protocol），想做的�
 MCP 采用客户端-服务器架构：
 
 ```mermaid
-graph TB
-    subgraph Host[宿主应用 Host]
-        H1[Cursor]
-        H2[Claude Code]
-        H3[Claude Desktop]
-        H4[Hermes Agent]
+graph LR
+    subgraph Hosts[宿主应用]
+        H1[Cursor] ~~~ H2[Claude Code]
+        H3[Hermes] ~~~ H4[Desktop]
     end
+    Hosts -->|MCP 协议| MCP[Tools / Resources / Prompts]
+    MCP --> S1[GitHub]
+    MCP --> S2[Database]
+    MCP --> S3[Filesystem]
+    MCP --> S4[Browser]
 
-    subgraph MCP_Protocol[MCP 协议层]
-        P1[Tools 工具调用]
-        P2[Resources 资源访问]
-        P3[Prompts 提示模板]
-    end
-
-    subgraph Servers[MCP Server]
-        S1[GitHub<br/>仓库/Issue/PR]
-        S2[Database<br/>PostgreSQL/MySQL]
-        S3[Filesystem<br/>文件读写]
-        S4[Puppeteer<br/>浏览器自动化]
-    end
-
-    H1 --> MCP_Protocol
-    H2 --> MCP_Protocol
-    H3 --> MCP_Protocol
-    H4 --> MCP_Protocol
-    MCP_Protocol --> S1
-    MCP_Protocol --> S2
-    MCP_Protocol --> S3
-    MCP_Protocol --> S4
-
-    style MCP_Protocol fill:#e8f4fd,stroke:#4a9eff
-    style Host fill:#fff3e0,stroke:#ff9f43
-    style Servers fill:#e8fdf5,stroke:#2ed573
+    style Hosts fill:#eef2ff,stroke:#a5b4fc
+    style MCP fill:#f0f9ff,stroke:#7dd3fc
 ```
 
 - **Host（宿主）**：发起请求的 AI 应用，比如 Cursor、Claude Desktop
