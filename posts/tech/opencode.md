@@ -11,88 +11,108 @@ description: 深入介绍 OpenCode 的核心功能、安装部署与使用体验
 
 # OpenCode：开源 Provider 无关的 Coding Agent
 
+> 官网：[https://opencode.ai](https://opencode.ai) / [GitHub](https://github.com/opencode-ai/opencode)
+
 ## 简介
 
 OpenCode 是一款开源、Provider 无关的 Coding Agent，支持任意 LLM 后端。它的理念是"不绑定某个模型，让你自由选择"。类似 Claude Code 的交互方式，但不依赖 Anthropic 的服务。
 
-对于不想被锁定在某个 AI 厂商生态的开发者来说，OpenCode 是最灵活的选择。
+对于不想被锁定在某个 AI 厂商生态的开发者来说，OpenCode 是最灵活的选择。它支持 OpenRouter、Anthropic、OpenAI、本地模型等多种后端，可以根据任务类型随时切换。
 
 ## 安装与部署
 
-### 安装
+### 系统要求
+
+- Node.js 18+ 或 Go 1.21+
+- macOS、Linux、Windows (WSL)
+
+### 安装方式一：npm
 
 ```bash
-# npm 安装
+# 全局安装
 npm i -g opencode-ai@latest
 
-# macOS (Homebrew)
+# 验证安装
+opencode --version
+```
+
+### 安装方式二：Homebrew (macOS)
+
+```bash
 brew install anomalyco/tap/opencode
+
+# 验证安装
+opencode --version
+```
+
+### 安装方式三：Go
+
+```bash
+go install github.com/opencode-ai/opencode@latest
 ```
 
 ### 配置 Provider
 
-OpenCode 支持多个 Provider：
+OpenCode 支持多个 Provider，选择一个即可：
+
+**使用 OpenRouter（推荐，聚合多个模型）：**
 
 ```bash
-# 使用 OpenRouter
-export OPENROUTER_API_KEY=sk-or-xxx
+# 获取 API Key：https://openrouter.ai/keys
+export OPENROUTER_API_KEY=sk-or-v1-xxxxxxxxxxxx
+```
 
-# 使用 Anthropic
-export ANTHROPIC_API_KEY=sk-ant-xxx
+**使用 Anthropic：**
 
-# 使用 OpenAI
-export OPENAI_API_KEY=sk-xxx
+```bash
+# 获取 API Key：https://console.anthropic.com
+export ANTHROPIC_API_KEY=sk-ant-api03-xxxxxxxxxxxx
+```
+
+**使用 OpenAI：**
+
+```bash
+# 获取 API Key：https://platform.openai.com/api-keys
+export OPENAI_API_KEY=sk-xxxxxxxxxxxx
+```
+
+**使用本地模型（Ollama）：**
+
+```bash
+# 先安装 Ollama：https://ollama.ai
+ollama pull llama3
+export OLLAMA_HOST=http://localhost:11434
+```
+
+### 配置文件
+
+可以在项目根目录创建 `.opencode.json` 配置文件：
+
+```json
+{
+  "provider": "openrouter",
+  "model": "anthropic/claude-3.5-sonnet",
+  "temperature": 0.7
+}
 ```
 
 ### 验证安装
 
 ```bash
-opencode --version
+# 测试是否正常工作
+opencode run "Say hello"
 ```
 
 ## 核心功能
 
 ### 多 Provider 支持
 
-OpenCode 支持多种 LLM 后端：
+OpenCode 支持多种 LLM 后端，这是它最大的特色：
 
-- OpenRouter（聚合多个模型）
-- Anthropic（Claude 系列）
-- OpenAI（GPT 系列）
-- 本地模型（Ollama 等）
-
-### TUI 交互
-
-```bash
-opencode
-> 帮我分析这个项目的架构
-```
-
-### 一次性执行
-
-```bash
-opencode run "给 UserController 加一个分页查询接口"
-```
-
-### PR Review
-
-```bash
-opencode pr 42
-```
-
-OpenCode 内置 PR Review 能力，可以直接分析 PR 的代码质量。
-
-### Session 管理
-
-OpenCode 支持 Session 管理，可以保存和恢复对话上下文。
-
-### 思考过程可见
-
-OpenCode 会展示 AI 的思考过程，让你了解它是如何分析和解决问题的。
-
-## 使用场景
-
-### 灵活选模型
+- **OpenRouter**：聚合多个模型，一个 API Key 用所有模型
+- **Anthropic**：Claude 系列，代码理解最强
+- **OpenAI**：GPT 系列，推理能力突出
+- **本地模型**：Ollama、LM Studio 等，免费无限制
 
 不同任务用不同模型：
 
@@ -102,6 +122,95 @@ OPENROUTER_API_KEY=xxx opencode run "写一个 React 组件"
 
 # 算法题用 GPT-4o
 OPENAI_API_KEY=xxx opencode run "实现一个红黑树"
+
+# 本地模型免费跑
+OLLAMA_HOST=http://localhost:11434 opencode run "解释这段代码"
+```
+
+### TUI 交互
+
+```bash
+$ opencode
+╭─────────────────────────────────────╮
+│ OpenCode                            │
+│ Provider: openrouter                │
+│ Model: anthropic/claude-3.5-sonnet  │
+╰─────────────────────────────────────╯
+
+> 帮我分析这个项目的架构
+
+# OpenCode 会：
+# 1. 扫描项目结构
+# 2. 分析依赖关系
+# 3. 生成架构图
+# 4. 给出优化建议
+```
+
+### 一次性执行
+
+```bash
+opencode run "给 UserController 加一个分页查询接口"
+opencode run "为这个函数写单元测试"
+opencode run "把这段代码改成 async/await 风格"
+```
+
+### PR Review
+
+OpenCode 内置 PR Review 能力：
+
+```bash
+# Review 指定 PR
+opencode pr 42
+
+# Review 当前分支的 diff
+git diff main | opencode run "Review this diff"
+```
+
+### Session 管理
+
+OpenCode 支持 Session 管理，可以保存和恢复对话上下文：
+
+```bash
+# 列出所有 Session
+opencode sessions list
+
+# 恢复某个 Session
+opencode sessions resume <session-id>
+
+# 删除 Session
+opencode sessions delete <session-id>
+```
+
+### 思考过程可见
+
+OpenCode 会展示 AI 的思考过程，让你了解它是如何分析和解决问题的：
+
+```text
+> 实现一个 LRU Cache
+
+[思考] LRU Cache 需要 O(1) 的 get 和 put 操作...
+[思考] 使用 HashMap + 双向链表实现...
+[分析] HashMap 存储 key -> node 映射...
+[分析] 双向链表维护访问顺序...
+
+[代码] class LRUCache { ... }
+```
+
+## 使用场景
+
+### 灵活选模型
+
+不同任务用不同模型，这是 OpenCode 的核心优势：
+
+```bash
+# 前端开发用 Claude（代码理解强）
+OPENROUTER_API_KEY=xxx opencode run "写一个 Vue 3 表单组件"
+
+# 算法题用 GPT-4o（推理能力强）
+OPENAI_API_KEY=xxx opencode run "实现一个 B+ 树"
+
+# 日常任务用本地模型（免费）
+OLLAMA_HOST=http://localhost:11434 opencode run "写一个 Shell 脚本"
 ```
 
 ### PR Review
@@ -113,27 +222,46 @@ opencode pr 42
 
 ### 不绑定厂商
 
-如果你不想被锁定在某个 AI 厂商生态，OpenCode 是最佳选择。
+如果你不想被锁定在某个 AI 厂商生态，OpenCode 是最佳选择。随时可以切换 Provider，不需要改工作流。
+
+### 本地模型开发
+
+```bash
+# 用 Ollama 本地模型，完全免费
+ollama pull codellama:34b
+OLLAMA_HOST=http://localhost:11434 opencode run "重构这个模块"
+```
 
 ## 优势
 
-1. **Provider 无关**：不绑定任何 AI 厂商
+1. **Provider 无关**：不绑定任何 AI 厂商，自由切换
 2. **开源免费**：Agent 本身免费，费用取决于 Provider
 3. **PR Review**：内置代码审查能力
 4. **思考过程可见**：了解 AI 的分析过程
 5. **灵活切换**：根据任务类型切换最优模型
+6. **本地模型支持**：可用 Ollama 完全免费使用
+7. **Session 管理**：保存和恢复对话上下文
 
 ## 定价
 
-OpenCode 本身免费开源，费用取决于你选择的 LLM Provider。
+OpenCode 本身免费开源，费用取决于你选择的 LLM Provider：
+
+| Provider | 价格参考 |
+|----------|----------|
+| OpenRouter | 按模型计费，见 openrouter.ai/pricing |
+| Anthropic | Sonnet: $3/M 输入，$15/M 输出 |
+| OpenAI | GPT-4o: $2.5/M 输入，$10/M 输出 |
+| Ollama | 完全免费 |
 
 ## 不足
 
-- 没有浏览器能力
-- 没有 MCP 支持
-- 多 Agent 协作能力较弱
-- 跨会话记忆较弱
+- 没有浏览器能力，无法操作 Web 页面
+- 没有 MCP 支持，无法接入外部工具
+- 多 Agent 协作能力较弱，没有子 Agent 编排
+- 跨会话记忆较弱，没有持久记忆机制
+- 对超大型项目的支持还有提升空间
+- 文档相对较少，社区还在成长
 
 ---
 
-> OpenCode 适合不想绑定某个 Provider、想用任意模型的开发者。它是 Claude Code 的开源替代品。
+> OpenCode 适合不想绑定某个 Provider、想用任意模型的开发者。它是 Claude Code 的开源替代品，也是本地模型开发的最佳选择。
