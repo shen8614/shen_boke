@@ -13,6 +13,8 @@ layout: doc
 ### 5 月
 
 - **05-27** [Hello Blog - 我的第一篇博客](/posts/tech/hello-blog)
+- **05-25** [Hermes Agent 深度体验：不只是 Coding Agent](/posts/tech/hermes-agent-review)
+- **05-24** [AI Coding Agent 终极对比](/posts/tech/ai-coding-agents)
 - **05-23** [本地大模型部署实战：Ollama + Open WebUI](/posts/tech/local-llm-deployment)
 - **05-22** [MCP 协议：AI 工具集成的新标准](/posts/tech/mcp-protocol)
 - **05-22** [酒店客房管理系统开发记录](/posts/project/hotel-management)
@@ -21,4 +23,4 @@ layout: doc
 
 ---
 
-共 6 篇文章 · 持续更新中...
+共 8 篇文章 · 持续更新中...

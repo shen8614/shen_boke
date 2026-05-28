@@ -20,23 +20,33 @@ layout: doc
 
 ---
 
-### [AI IDE 横评：Cursor、Windsurf 与 VS Code Copilot](/posts/tech/ai-ide-comparison)
+### [Hermes Agent 深度体验：不只是 Coding Agent](/posts/tech/hermes-agent-review)
 
-📅 2026-05-20 · ⏱️ 10 分钟
+📅 2026-05-25 · ⏱️ 12 分钟
 
-深度对比三款主流 AI IDE 的实际使用体验，从代码补全到 Agent 能力。
+使用 Hermes Agent 三个月的真实体验，从终端编程到消息平台自动化。
 
-`AI` `IDE` `Cursor`
+`AI Agent` `Hermes` `自动化`
 
 ---
 
-### [AI Agent 开发实践：从概念到落地](/posts/tech/ai-agent-development)
+### [AI Coding Agent 终极对比：Claude Code vs Codex vs OpenCode vs Hermes Agent](/posts/tech/ai-coding-agents)
 
-📅 2026-05-21 · ⏱️ 12 分钟
+📅 2026-05-24 · ⏱️ 15 分钟
 
-记录 AI Agent 的开发经验，从工具调用到多智能体协作，以及实际踩过的坑。
+五款主流 AI Coding Agent 的深度对比。
 
-`AI Agent` `LLM` `LangChain`
+`AI Agent` `Claude Code` `Codex`
+
+---
+
+### [本地大模型部署实战：Ollama + Open WebUI](/posts/tech/local-llm-deployment)
+
+📅 2026-05-23 · ⏱️ 12 分钟
+
+在本地跑大模型的完整指南。
+
+`LLM` `Ollama`
 
 ---
 
@@ -46,17 +56,27 @@ layout: doc
 
 理解 Model Context Protocol 的设计理念和实际应用。
 
-`MCP` `AI Agent` `协议`
+`MCP` `协议`
 
 ---
 
-### [本地大模型部署实战：Ollama + Open WebUI](/posts/tech/local-llm-deployment)
+### [AI Agent 开发实践：从概念到落地](/posts/tech/ai-agent-development)
 
-📅 2026-05-23 · ⏱️ 12 分钟
+📅 2026-05-21 · ⏱️ 12 分钟
 
-在本地跑大模型的完整指南，从 Ollama 安装到 Open WebUI 配置。
+记录 AI Agent 的开发经验，从工具调用到多智能体协作。
 
-`LLM` `Ollama` `本地部署`
+`AI Agent` `LLM`
+
+---
+
+### [AI IDE 横评：Cursor、Windsurf 与 VS Code Copilot](/posts/tech/ai-ide-comparison)
+
+📅 2026-05-20 · ⏱️ 10 分钟
+
+深度对比三款主流 AI IDE 的实际使用体验。
+
+`AI` `IDE` `Cursor`
 
 ---
 

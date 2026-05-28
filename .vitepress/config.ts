@@ -30,6 +30,8 @@ export default defineConfig({
           items: [
             { text: 'Hello Blog', link: '/posts/tech/hello-blog' },
             { text: 'AI IDE 横评', link: '/posts/tech/ai-ide-comparison' },
+            { text: 'AI Coding Agent 对比', link: '/posts/tech/ai-coding-agents' },
+            { text: 'Hermes Agent 深度体验', link: '/posts/tech/hermes-agent-review' },
             { text: 'AI Agent 开发实践', link: '/posts/tech/ai-agent-development' },
             { text: 'MCP 协议', link: '/posts/tech/mcp-protocol' },
             { text: '本地大模型部署', link: '/posts/tech/local-llm-deployment' },

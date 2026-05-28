@@ -26,33 +26,23 @@ features:
 
 ## 最新文章
 
-### [AI IDE 横评：Cursor、Windsurf 与 VS Code Copilot](/posts/tech/ai-ide-comparison)
+### [Hermes Agent 深度体验：不只是 Coding Agent](/posts/tech/hermes-agent-review)
 
-📅 2026-05-20 · 📁 技术学习 · ⏱️ 10 分钟
+📅 2026-05-25 · 📁 技术学习 · ⏱️ 12 分钟
 
-深度对比三款主流 AI IDE 的实际使用体验，从代码补全到 Agent 能力。
+使用 Hermes Agent 三个月的真实体验，从终端编程到消息平台自动化。
 
-`AI` `IDE` `Cursor`
-
----
-
-### [AI Agent 开发实践：从概念到落地](/posts/tech/ai-agent-development)
-
-📅 2026-05-21 · 📁 技术学习 · ⏱️ 12 分钟
-
-记录 AI Agent 的开发经验，从工具调用到多智能体协作，以及实际踩过的坑。
-
-`AI Agent` `LLM`
+`AI Agent` `Hermes` `自动化`
 
 ---
 
-### [MCP 协议：AI 工具集成的新标准](/posts/tech/mcp-protocol)
+### [AI Coding Agent 终极对比](/posts/tech/ai-coding-agents)
 
-📅 2026-05-22 · 📁 技术学习 · ⏱️ 10 分钟
+📅 2026-05-24 · 📁 技术学习 · ⏱️ 15 分钟
 
-理解 Model Context Protocol 的设计理念和实际应用。
+Claude Code vs Codex vs OpenCode vs Hermes Agent 深度对比。
 
-`MCP` `协议`
+`AI Agent` `Claude Code` `Codex`
 
 ---
 
@@ -66,11 +56,31 @@ features:
 
 ---
 
+### [MCP 协议：AI 工具集成的新标准](/posts/tech/mcp-protocol)
+
+📅 2026-05-22 · 📁 技术学习 · ⏱️ 10 分钟
+
+理解 Model Context Protocol 的设计理念和实际应用。
+
+`MCP` `协议`
+
+---
+
+### [AI Agent 开发实践：从概念到落地](/posts/tech/ai-agent-development)
+
+📅 2026-05-21 · 📁 技术学习 · ⏱️ 12 分钟
+
+记录 AI Agent 的开发经验，从工具调用到多智能体协作。
+
+`AI Agent` `LLM`
+
+---
+
 ### [酒店客房管理系统开发记录](/posts/project/hotel-management)
 
 📅 2026-05-22 · 📁 项目实战 · ⏱️ 20 分钟
 
-连锁酒店客房管理系统全栈项目开发记录，包含技术选型、架构设计、功能实现等内容。
+连锁酒店客房管理系统全栈项目开发记录。
 
 `Spring Boot` `Vue 3` `项目实战`
 
