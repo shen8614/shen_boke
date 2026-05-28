@@ -117,21 +117,9 @@ graph TB
 
 ## 数据库设计
 
-系统共 11 张核心表，关系如下：
+系统共 11 张核心表，关系如下（Chen 记法）：
 
-```mermaid
-erDiagram
-    stores ||--o{ rooms : "拥有"
-    stores ||--o{ staff : "雇佣"
-    room_types ||--o{ rooms : "定义"
-    guests ||--o{ reservations : "预订"
-    guests ||--o{ checkins : "入住"
-    rooms ||--o{ checkins : "入住"
-    reservations ||--o| checkins : "转"
-    checkins ||--o{ consumption : "消费"
-    checkins ||--|| bills : "结算"
-    consumption_items ||--o{ consumption : "被消费"
-```
+![酒店管理系统 ER 图](/hotel-er.svg)
 
 ### 核心表结构
 

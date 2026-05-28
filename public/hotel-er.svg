@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 600" width="1020" height="600" font-family="Inter, system-ui, sans-serif">
+<rect width="1020" height="600" fill="#fafbfc" rx="12"/>
+<text x="510" y="32" text-anchor="middle" font-size="16" font-weight="700" fill="#1a1a2e">酒店客房管理系统 ER 图（Chen 记法）</text>
+<g transform="translate(30, 560)">
+<rect x="0" y="0" width="80" height="28" rx="6" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.5"/><text x="40" y="18" text-anchor="middle" font-size="11" fill="#1e40af">实体</text>
+<ellipse cx="140" cy="14" rx="36" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/><text x="140" y="18" text-anchor="middle" font-size="11" fill="#92400e">属性</text>
+<polygon points="230,0 270,14 230,28 190,14" fill="#fce7f3" stroke="#ec4899" stroke-width="1.2"/><text x="230" y="18" text-anchor="middle" font-size="11" fill="#9d174d">关系</text>
+<text x="300" y="18" font-size="11" fill="#b85450">1:N 基数约束标在线旁</text>
+</g>
+<polygon points="100,156 140,180 100,204 60,180" fill="#fce7f3" stroke="#ec4899" stroke-width="1.2" rx="4"/>
+<text x="100" y="184" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">拥有</text>
+<line x1="100" y1="80" x2="60" y2="180" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="140" y1="180" x2="100" y2="280" stroke="#6b7280" stroke-width="1.2"/>
+<text x="89" y="99" font-size="11" font-weight="700" fill="#b85450">1</text>
+<text x="110" y="248" font-size="11" font-weight="700" fill="#b85450">N</text>
+<polygon points="100,256 140,280 100,304 60,280" fill="#fce7f3" stroke="#ec4899" stroke-width="1.2" rx="4"/>
+<text x="100" y="284" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">开设</text>
+<line x1="100" y1="80" x2="60" y2="280" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="140" y1="280" x2="100" y2="480" stroke="#6b7280" stroke-width="1.2"/>
+<text x="94" y="101" font-size="11" font-weight="700" fill="#b85450">1</text>
+<text x="105" y="446" font-size="11" font-weight="700" fill="#b85450">N</text>
+<polygon points="225,256 265,280 225,304 185,280" fill="#fce7f3" stroke="#ec4899" stroke-width="1.2" rx="4"/>
+<text x="225" y="284" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">雇佣</text>
+<line x1="100" y1="80" x2="185" y2="280" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="265" y1="280" x2="350" y2="480" stroke="#6b7280" stroke-width="1.2"/>
+<text x="110" y="99" font-size="11" font-weight="700" fill="#b85450">1</text>
+<text x="339" y="448" font-size="11" font-weight="700" fill="#b85450">N</text>
+<polygon points="100,356 140,380 100,404 60,380" fill="#fce7f3" stroke="#ec4899" stroke-width="1.2" rx="4"/>
+<text x="100" y="384" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">分类</text>
+<line x1="100" y1="280" x2="60" y2="380" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="140" y1="380" x2="100" y2="480" stroke="#6b7280" stroke-width="1.2"/>
+<text x="89" y="299" font-size="11" font-weight="700" fill="#b85450">1</text>
+<text x="110" y="448" font-size="11" font-weight="700" fill="#b85450">N</text>
+<polygon points="340,356 380,380 340,404 300,380" fill="#fce7f3" stroke="#ec4899" stroke-width="1.2" rx="4"/>
+<text x="340" y="384" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">分配</text>
+<line x1="100" y1="480" x2="300" y2="380" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="380" y1="380" x2="580" y2="280" stroke="#6b7280" stroke-width="1.2"/>
+<text x="125" y="461" font-size="11" font-weight="700" fill="#b85450">1</text>
+<text x="554" y="286" font-size="11" font-weight="700" fill="#b85450">N</text>
+<polygon points="340,456 380,480 340,504 300,480" fill="#fce7f3" stroke="#ec4899" stroke-width="1.2" rx="4"/>
+<text x="340" y="484" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">入住</text>
+<line x1="100" y1="480" x2="300" y2="480" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="380" y1="480" x2="580" y2="480" stroke="#6b7280" stroke-width="1.2"/>
+<text x="128" y="474" font-size="11" font-weight="700" fill="#b85450">1</text>
+<text x="552" y="474" font-size="11" font-weight="700" fill="#b85450">N</text>
+<polygon points="350,256 390,280 350,304 310,280" fill="#fce7f3" stroke="#ec4899" stroke-width="1.2" rx="4"/>
+<text x="350" y="284" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">赋予</text>
+<line x1="350" y1="80" x2="310" y2="280" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="390" y1="280" x2="350" y2="480" stroke="#6b7280" stroke-width="1.2"/>
+<text x="344" y="101" font-size="11" font-weight="700" fill="#b85450">1</text>
+<text x="355" y="446" font-size="11" font-weight="700" fill="#b85450">N</text>
+<polygon points="580,156 620,180 580,204 540,180" fill="#fce7f3" stroke="#ec4899" stroke-width="1.2" rx="4"/>
+<text x="580" y="184" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">提交</text>
+<line x1="580" y1="80" x2="540" y2="180" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="620" y1="180" x2="580" y2="280" stroke="#6b7280" stroke-width="1.2"/>
+<text x="569" y="99" font-size="11" font-weight="700" fill="#b85450">1</text>
+<text x="590" y="248" font-size="11" font-weight="700" fill="#b85450">N</text>
+<polygon points="580,256 620,280 580,304 540,280" fill="#fce7f3" stroke="#ec4899" stroke-width="1.2" rx="4"/>
+<text x="580" y="284" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">登记</text>
+<line x1="580" y1="80" x2="540" y2="280" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="620" y1="280" x2="580" y2="480" stroke="#6b7280" stroke-width="1.2"/>
+<text x="574" y="101" font-size="11" font-weight="700" fill="#b85450">1</text>
+<text x="585" y="446" font-size="11" font-weight="700" fill="#b85450">N</text>
+<polygon points="580,356 620,380 580,404 540,380" fill="#fce7f3" stroke="#ec4899" stroke-width="1.2" rx="4"/>
+<text x="580" y="384" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">转为</text>
+<line x1="580" y1="280" x2="540" y2="380" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="620" y1="380" x2="580" y2="480" stroke="#6b7280" stroke-width="1.2"/>
+<text x="569" y="299" font-size="11" font-weight="700" fill="#b85450">1</text>
+<text x="590" y="448" font-size="11" font-weight="700" fill="#b85450">1</text>
+<polygon points="465,456 505,480 465,504 425,480" fill="#fce7f3" stroke="#ec4899" stroke-width="1.2" rx="4"/>
+<text x="465" y="484" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">办理</text>
+<line x1="350" y1="480" x2="425" y2="480" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="505" y1="480" x2="580" y2="480" stroke="#6b7280" stroke-width="1.2"/>
+<text x="378" y="474" font-size="11" font-weight="700" fill="#b85450">1</text>
+<text x="552" y="474" font-size="11" font-weight="700" fill="#b85450">N</text>
+<polygon points="595,456 635,480 595,504 555,480" fill="#fce7f3" stroke="#ec4899" stroke-width="1.2" rx="4"/>
+<text x="595" y="484" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">结账</text>
+<line x1="350" y1="480" x2="555" y2="480" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="635" y1="480" x2="840" y2="480" stroke="#6b7280" stroke-width="1.2"/>
+<text x="378" y="474" font-size="11" font-weight="700" fill="#b85450">1</text>
+<text x="812" y="474" font-size="11" font-weight="700" fill="#b85450">N</text>
+<polygon points="840,156 880,180 840,204 800,180" fill="#fce7f3" stroke="#ec4899" stroke-width="1.2" rx="4"/>
+<text x="840" y="184" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">项目</text>
+<line x1="840" y1="80" x2="800" y2="180" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="880" y1="180" x2="840" y2="280" stroke="#6b7280" stroke-width="1.2"/>
+<text x="829" y="99" font-size="11" font-weight="700" fill="#b85450">1</text>
+<text x="850" y="248" font-size="11" font-weight="700" fill="#b85450">N</text>
+<polygon points="710,356 750,380 710,404 670,380" fill="#fce7f3" stroke="#ec4899" stroke-width="1.2" rx="4"/>
+<text x="710" y="384" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">产生</text>
+<line x1="580" y1="480" x2="670" y2="380" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="750" y1="380" x2="840" y2="280" stroke="#6b7280" stroke-width="1.2"/>
+<text x="598" y="453" font-size="11" font-weight="700" fill="#b85450">1</text>
+<text x="821" y="294" font-size="11" font-weight="700" fill="#b85450">N</text>
+<polygon points="710,456 750,480 710,504 670,480" fill="#fce7f3" stroke="#ec4899" stroke-width="1.2" rx="4"/>
+<text x="710" y="484" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">结算</text>
+<line x1="580" y1="480" x2="670" y2="480" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="750" y1="480" x2="840" y2="480" stroke="#6b7280" stroke-width="1.2"/>
+<text x="608" y="474" font-size="11" font-weight="700" fill="#b85450">1</text>
+<text x="812" y="474" font-size="11" font-weight="700" fill="#b85450">1</text>
+<polygon points="340,256 380,280 340,304 300,280" fill="#fce7f3" stroke="#ec4899" stroke-width="1.2" rx="4"/>
+<text x="340" y="284" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">预订房型</text>
+<line x1="100" y1="280" x2="300" y2="280" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="380" y1="280" x2="580" y2="280" stroke="#6b7280" stroke-width="1.2"/>
+<text x="128" y="274" font-size="11" font-weight="700" fill="#b85450">1</text>
+<text x="552" y="274" font-size="11" font-weight="700" fill="#b85450">N</text>
+<rect x="40" y="58" width="120" height="44" rx="10" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.8"/>
+<text x="100" y="85" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">门店</text>
+<ellipse cx="100" cy="38" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="100" y="42" text-anchor="middle" font-size="10" fill="#92400e">门店名称</text>
+<line x1="100" y1="80" x2="100" y2="38" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<ellipse cx="-6" cy="80" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="-6" y="84" text-anchor="middle" font-size="10" fill="#92400e">联系电话</text>
+<line x1="100" y1="80" x2="-6" y2="80" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<ellipse cx="100" cy="122" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="100" y="126" text-anchor="middle" font-size="10" fill="#92400e">地址</text>
+<line x1="100" y1="80" x2="100" y2="122" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="40" y="258" width="120" height="44" rx="10" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.8"/>
+<text x="100" y="285" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">客房类型</text>
+<ellipse cx="100" cy="238" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="100" y="242" text-anchor="middle" font-size="10" fill="#92400e">类型名称</text>
+<line x1="100" y1="280" x2="100" y2="238" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<ellipse cx="-6" cy="280" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="-6" y="284" text-anchor="middle" font-size="10" fill="#92400e">基础价格</text>
+<line x1="100" y1="280" x2="-6" y2="280" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<ellipse cx="100" cy="322" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="100" y="326" text-anchor="middle" font-size="10" fill="#92400e">最大人数</text>
+<line x1="100" y1="280" x2="100" y2="322" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="40" y="458" width="120" height="44" rx="10" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.8"/>
+<text x="100" y="485" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">客房</text>
+<ellipse cx="100" cy="438" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="100" y="442" text-anchor="middle" font-size="10" fill="#92400e">房间号</text>
+<line x1="100" y1="480" x2="100" y2="438" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<ellipse cx="-6" cy="480" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="-6" y="484" text-anchor="middle" font-size="10" fill="#92400e">标准价格</text>
+<line x1="100" y1="480" x2="-6" y2="480" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<ellipse cx="100" cy="522" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="100" y="526" text-anchor="middle" font-size="10" fill="#92400e">状态</text>
+<line x1="100" y1="480" x2="100" y2="522" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="290" y="58" width="120" height="44" rx="10" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.8"/>
+<text x="350" y="85" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">角色</text>
+<ellipse cx="350" cy="38" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="350" y="42" text-anchor="middle" font-size="10" fill="#92400e">角色名称</text>
+<line x1="350" y1="80" x2="350" y2="38" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<ellipse cx="244" cy="80" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="244" y="84" text-anchor="middle" font-size="10" fill="#92400e">描述</text>
+<line x1="350" y1="80" x2="244" y2="80" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<ellipse cx="350" cy="122" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="350" y="126" text-anchor="middle" font-size="10" fill="#92400e">创建时间</text>
+<line x1="350" y1="80" x2="350" y2="122" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="520" y="58" width="120" height="44" rx="10" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.8"/>
+<text x="580" y="85" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">客人</text>
+<ellipse cx="580" cy="38" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="580" y="42" text-anchor="middle" font-size="10" fill="#92400e">姓名</text>
+<line x1="580" y1="80" x2="580" y2="38" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<ellipse cx="474" cy="80" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="474" y="84" text-anchor="middle" font-size="10" fill="#92400e">手机号</text>
+<line x1="580" y1="80" x2="474" y2="80" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<ellipse cx="580" cy="122" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="580" y="126" text-anchor="middle" font-size="10" fill="#92400e">证件号码</text>
+<line x1="580" y1="80" x2="580" y2="122" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="520" y="258" width="120" height="44" rx="10" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.8"/>
+<text x="580" y="285" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">预订</text>
+<ellipse cx="580" cy="238" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="580" y="242" text-anchor="middle" font-size="10" fill="#92400e">入住日期</text>
+<line x1="580" y1="280" x2="580" y2="238" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<ellipse cx="474" cy="280" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="474" y="284" text-anchor="middle" font-size="10" fill="#92400e">离店日期</text>
+<line x1="580" y1="280" x2="474" y2="280" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<ellipse cx="580" cy="322" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="580" y="326" text-anchor="middle" font-size="10" fill="#92400e">状态</text>
+<line x1="580" y1="280" x2="580" y2="322" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="520" y="458" width="120" height="44" rx="10" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.8"/>
+<text x="580" y="485" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">入住登记</text>
+<ellipse cx="580" cy="438" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="580" y="442" text-anchor="middle" font-size="10" fill="#92400e">入住时间</text>
+<line x1="580" y1="480" x2="580" y2="438" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<ellipse cx="474" cy="480" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="474" y="484" text-anchor="middle" font-size="10" fill="#92400e">离店时间</text>
+<line x1="580" y1="480" x2="474" y2="480" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<ellipse cx="580" cy="522" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="580" y="526" text-anchor="middle" font-size="10" fill="#92400e">状态</text>
+<line x1="580" y1="480" x2="580" y2="522" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="780" y="58" width="120" height="44" rx="10" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.8"/>
+<text x="840" y="85" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">消费项目</text>
+<ellipse cx="840" cy="38" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="840" y="42" text-anchor="middle" font-size="10" fill="#92400e">项目名称</text>
+<line x1="840" y1="80" x2="840" y2="38" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<ellipse cx="734" cy="80" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="734" y="84" text-anchor="middle" font-size="10" fill="#92400e">价格</text>
+<line x1="840" y1="80" x2="734" y2="80" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<ellipse cx="840" cy="122" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="840" y="126" text-anchor="middle" font-size="10" fill="#92400e">类别</text>
+<line x1="840" y1="80" x2="840" y2="122" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="780" y="258" width="120" height="44" rx="10" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.8"/>
+<text x="840" y="285" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">消费记录</text>
+<ellipse cx="840" cy="238" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="840" y="242" text-anchor="middle" font-size="10" fill="#92400e">数量</text>
+<line x1="840" y1="280" x2="840" y2="238" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<ellipse cx="734" cy="280" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="734" y="284" text-anchor="middle" font-size="10" fill="#92400e">金额</text>
+<line x1="840" y1="280" x2="734" y2="280" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<ellipse cx="840" cy="322" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="840" y="326" text-anchor="middle" font-size="10" fill="#92400e">消费时间</text>
+<line x1="840" y1="280" x2="840" y2="322" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="780" y="458" width="120" height="44" rx="10" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.8"/>
+<text x="840" y="485" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">账单</text>
+<ellipse cx="840" cy="438" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="840" y="442" text-anchor="middle" font-size="10" fill="#92400e">房费</text>
+<line x1="840" y1="480" x2="840" y2="438" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<ellipse cx="734" cy="480" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="734" y="484" text-anchor="middle" font-size="10" fill="#92400e">总费用</text>
+<line x1="840" y1="480" x2="734" y2="480" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<ellipse cx="840" cy="522" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="840" y="526" text-anchor="middle" font-size="10" fill="#92400e">支付方式</text>
+<line x1="840" y1="480" x2="840" y2="522" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="290" y="458" width="120" height="44" rx="10" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.8"/>
+<text x="350" y="485" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">员工</text>
+<ellipse cx="350" cy="438" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="350" y="442" text-anchor="middle" font-size="10" fill="#92400e">用户名</text>
+<line x1="350" y1="480" x2="350" y2="438" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<ellipse cx="244" cy="480" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="244" y="484" text-anchor="middle" font-size="10" fill="#92400e">姓名</text>
+<line x1="350" y1="480" x2="244" y2="480" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<ellipse cx="350" cy="522" rx="38" ry="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="350" y="526" text-anchor="middle" font-size="10" fill="#92400e">联系方式</text>
+<line x1="350" y1="480" x2="350" y2="522" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+</svg>
