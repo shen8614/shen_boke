@@ -35,7 +35,7 @@ layout: doc
 
 ## 📫 联系方式
 
-- GitHub: github.com/shen8614
+- GitHub: [github.com/shen8614](https://github.com/shen8614)
 - Email: 3756959811@qq.com
 ---
 

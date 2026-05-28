@@ -1,266 +1,267 @@
-     1|---
-     2|title: "OpenClaw：轻量级 AI Agent 工具"
-     3|date: 2026-05-24
-     4|tags:
-     5|  - AI Agent
-     6|  - OpenClaw
-     7|categories:
-     8|  - 技术学习
-     9|description: 深入介绍 OpenClaw 的核心功能、安装部署与使用体验。
-    10|---
-    11|
-    12|# OpenClaw：轻量级 AI Agent 工具
-    13|
-    14|> 官网：[https://github.com/openclaw/openclaw](https://github.com/openclaw/openclaw)
-    15|
-    16|## 简介
-    17|
-    18|OpenClaw 是一款轻量级 AI Agent 工具，专注于简洁的配置和快速上手。它的理念是"越简单越好"——不需要复杂的配置，几步就能开始使用。
-    19|
-    20|OpenClaw 与 Hermes Agent 共享部分基础设施，但更加轻量。如果你只是想快速试试 AI Agent，不想花时间配置复杂的功能，OpenClaw 是最简单的选择。
-    21|
-    22|## 安装与部署
-    23|
-    24|### 系统要求
-    25|
-    26|- Node.js 18+
-    27|- macOS、Linux、Windows (WSL)
-    28|
-    29|### 安装
-    30|
-    31|```bash
-    32|# 方式一：npm 全局安装
-    33|npm install -g openclaw
-    34|
-    35|# 方式二：从 GitHub 安装最新版
-    36|git clone https://github.com/openclaw/openclaw.git
-    37|cd openclaw
-    38|npm install
-    39|npm link
-    40|
-    41|# 验证安装
-    42|openclaw --version
-    43|```
-    44|
-    45|### 初始化配置
-    46|
-    47|OpenClaw 的配置流程非常简洁，只需要 3 步：
-    48|
-    49|```bash
-    50|openclaw setup
-    51|```
-    52|
-    53|交互式配置：
-    54|
-    55|```text
-    56|Step 1/3: 选择 Provider
-    57|  > DeepSeek（推荐，性价比高）
-    58|    OpenRouter（聚合多个模型）
-    59|    Anthropic（Claude 系列）
-    60|    OpenAI（GPT 系列）
-    61|
-    62|Step 2/3: 勾选技能
-    63|  [x] github — GitHub 操作
-    64|  [x] gh-issues — Issue 管理
-    65|  [ ] nano-pdf — PDF 编辑
-    66|  [x] xurl — X/Twitter 操作
-    67|
-    68|Step 3/3: 开启 Hooks
-    69|  [x] 启用 Shell 集成
-    70|  [x] 启用 Git Hooks
-    71|
-    72|配置完成！
-    73|```
-    74|
-    75|### 配置 API Key
-    76|
-    77|根据选择的 Provider 设置对应的 API Key：
-    78|
-    79|```bash
-    80|# DeepSeek
-    81|export DEEPSEEK_API_KEY=***
-    82|
-    83|# OpenRouter
-    84|export OPENROUTER_API_KEY=sk-or-...xxxx
-    85|
-    86|# Anthropic
-    87|export ANTHROPIC_API_KEY=sk-ant...xxxx
-    88|
-    89|# OpenAI
-    90|export OPENAI_API_KEY=***
-    91|```
-    92|
-    93|### 验证安装
-    94|
-    95|```bash
-    96|# 测试是否正常工作
-    97|openclaw "Say hello"
-    98|
-    99|# 查看配置
-   100|openclaw config list
-   101|
-   102|# 查看已加载的技能
-   103|openclaw skills list
-   104|```
-   105|
-   106|## 核心功能
-   107|
-   108|### 极简配置
-   109|
-   110|OpenClaw 的配置流程是所有 Agent 中最简单的：
-   111|
-   112|- **Provider 选择**：选择一个 LLM 后端
-   113|- **技能勾选**：勾选需要的技能
-   114|- **Hooks 开关**：选择是否启用 Shell 集成
-   115|- 完成
-   116|
-   117|不需要写配置文件，不需要申请多个 Token，不需要配置消息平台。
-   118|
-   119|### 技能系统
-   120|
-   121|OpenClaw 支持多种内置技能：
-   122|
-   123|**github 技能：**
-   124|```bash
-   125|openclaw "查看这个仓库的最近 5 个 PR"
-   126|openclaw "创建一个 Issue：修复登录页面的样式问题"
-   127|openclaw "Review PR #42 的代码"
-   128|```
-   129|
-   130|**gh-issues 技能：**
-   131|```bash
-   132|openclaw "列出所有 open 状态的 Issue"
-   133|openclaw "给 Issue #123 加上 bug 标签"
-   134|openclaw "关闭 Issue #456"
-   135|```
-   136|
-   137|**nano-pdf 技能：**
-   138|```bash
-   139|openclaw "提取这个 PDF 的第三页内容"
-   140|openclaw "修改 PDF 中的错别字"
-   141|```
-   142|
-   143|**xurl 技能：**
-   144|```bash
-   145|openclaw "发一条推文：今天学到了新的 AI 工具"
-   146|openclaw "搜索关于 AI Agent 的最新推文"
-   147|```
-   148|
-   149|### Hooks 集成
-   150|
-   151|OpenClaw 支持 Hooks（Shell 集成），可以在特定事件触发时自动执行操作：
-   152|
-   153|```bash
-   154|# Git commit 时自动运行
-   155|openclaw hooks install
-   156|
-   157|# 之后每次 git commit 会自动：
-   158|# 1. 检查代码风格
-   159|# 2. 运行测试
-   160|# 3. 生成 commit message 建议
-   161|```
-   162|
-   163|### 代码编写
-   164|
-   165|```bash
-   166|# 交互式
-   167|openclaw
-   168|> 给 UserController 加一个分页查询接口
-   169|
-   170|# 一次性执行
-   171|openclaw "为这个函数写单元测试"
-   172|openclaw "把这段代码改成 async/await 风格"
-   173|```
-   174|
-   175|### 文件操作
-   176|
-   177|```bash
-   178|openclaw "分析这个 CSV 文件，生成统计报告"
-   179|openclaw "把这个 JSON 文件转换成 YAML 格式"
-   180|openclaw "找出这个目录下所有大于 10MB 的文件"
-   181|```
-   182|
-   183|## 使用场景
-   184|
-   185|### 快速上手
-   186|
-   187|如果你只是想快速试试 AI Agent，OpenClaw 是最简单的选择：
-   188|
-   189|```bash
-   190|# 3 步配置
-   191|openclaw setup
-   192|
-   193|# 开始使用
-   194|openclaw "帮我写一个 Hello World 的 Python 脚本"
-   195|```
-   196|
-   197|### 轻量任务
-   198|
-   199|适合简单的代码编写、文件操作、Git 操作等：
-   200|
-   201|```bash
-   202|openclaw "给这个函数加类型注解"
-   203|openclaw "生成一个 .gitignore 文件"
-   204|openclaw "分析这个项目的依赖树"
-   205|```
-   206|
-   207|### GitHub 操作
-   208|
-   209|```bash
-   210|openclaw "查看这个仓库的最近 PR"
-   211|openclaw "创建一个 Issue"
-   212|openclaw "Review PR #42"
-   213|```
-   214|
-   215|### 日常脚本
-   216|
-   217|```bash
-   218|openclaw "写一个脚本，每天备份数据库"
-   219|openclaw "写一个脚本，监控服务器磁盘空间"
-   220|openclaw "写一个脚本，批量重命名文件"
-   221|```
-   222|
-   223|## 优势
-   224|
-   225|1. **极简配置**：3 步完成配置，不需要写配置文件
-   226|2. **快速上手**：学习成本最低，5 分钟开始使用
-   227|3. **轻量级**：不依赖复杂基础设施，安装即用
-   228|4. **内置技能**：github、gh-issues、nano-pdf、xurl 等常用技能
-   229|5. **Hooks 集成**：Git Hooks 自动化
-   230|6. **与 Hermes 共享基础设施**：部分技能通用
-   231|
-   232|## 定价
-   233|
-   234|OpenClaw 本身免费，费用取决于你选择的 LLM Provider：
-   235|
-   236|| Provider | 价格参考 |
-   237||----------|----------|
-   238|| DeepSeek | ¥1/百万输入 tokens，¥2/百万输出 tokens |
-   239|| OpenRouter | 按模型计费，见 openrouter.ai/pricing |
-   240|| Anthropic | Sonnet: $3/M 输入，$15/M 输出 |
-   241|| OpenAI | GPT-4o: $2.5/M 输入，$10/M 输出 |
-   242|
-   243|## 不足
-   244|
-   245|- 功能相对简单，没有持久记忆
-   246|- 没有消息平台集成，只能在终端使用
-   247|- 没有 Cron 定时任务
-   248|- 没有 MCP 支持
-   249|- 没有浏览器能力
-   250|- 与 Hermes Agent 共用同一套凭证会冲突，不能同时运行
-   251|- 技能数量有限，扩展性不如 Hermes
-   252|- 文档较少，社区还在成长
-   253|
-   254|---
-   255|
-   256|> OpenClaw 适合想快速上手试试 AI Agent 的开发者。配置越简单越好，功能够用就行。如果你需要更强大的功能，可以后续迁移到 Hermes Agent。
-   257|
-
+     1|     1|---
+     2|     2|title: "OpenClaw：轻量级 AI Agent 工具"
+     3|     3|date: 2026-05-24
+     4|     4|tags:
+     5|     5|  - AI Agent
+     6|     6|  - OpenClaw
+     7|     7|categories:
+     8|     8|  - 技术学习
+     9|     9|description: 深入介绍 OpenClaw 的核心功能、安装部署与使用体验。
+    10|    10|---
+    11|    11|
+    12|    12|# OpenClaw：轻量级 AI Agent 工具
+    13|    13|
+    14|    14|> 官网：[https://github.com/openclaw/openclaw](https://github.com/openclaw/openclaw)
+    15|    15|
+    16|    16|## 简介
+    17|    17|
+    18|    18|OpenClaw 是一款轻量级 AI Agent 工具，专注于简洁的配置和快速上手。它的理念是"越简单越好"——不需要复杂的配置，几步就能开始使用。
+    19|    19|
+    20|    20|OpenClaw 与 Hermes Agent 共享部分基础设施，但更加轻量。如果你只是想快速试试 AI Agent，不想花时间配置复杂的功能，OpenClaw 是最简单的选择。
+    21|    21|
+    22|    22|## 安装与部署
+    23|    23|
+    24|    24|### 系统要求
+    25|    25|
+    26|    26|- Node.js 18+
+    27|    27|- macOS、Linux、Windows (WSL)
+    28|    28|
+    29|    29|### 安装
+    30|    30|
+    31|    31|```bash
+    32|    32|# 方式一：npm 全局安装
+    33|    33|npm install -g openclaw
+    34|    34|
+    35|    35|# 方式二：从 GitHub 安装最新版
+    36|    36|git clone https://github.com/openclaw/openclaw.git
+    37|    37|cd openclaw
+    38|    38|npm install
+    39|    39|npm link
+    40|    40|
+    41|    41|# 验证安装
+    42|    42|openclaw --version
+    43|    43|```
+    44|    44|
+    45|    45|### 初始化配置
+    46|    46|
+    47|    47|OpenClaw 的配置流程非常简洁，只需要 3 步：
+    48|    48|
+    49|    49|```bash
+    50|    50|openclaw setup
+    51|    51|```
+    52|    52|
+    53|    53|交互式配置：
+    54|    54|
+    55|    55|```text
+    56|    56|Step 1/3: 选择 Provider
+    57|    57|  > DeepSeek（推荐，性价比高）
+    58|    58|    OpenRouter（聚合多个模型）
+    59|    59|    Anthropic（Claude 系列）
+    60|    60|    OpenAI（GPT 系列）
+    61|    61|
+    62|    62|Step 2/3: 勾选技能
+    63|    63|  [x] github — GitHub 操作
+    64|    64|  [x] gh-issues — Issue 管理
+    65|    65|  [ ] nano-pdf — PDF 编辑
+    66|    66|  [x] xurl — X/Twitter 操作
+    67|    67|
+    68|    68|Step 3/3: 开启 Hooks
+    69|    69|  [x] 启用 Shell 集成
+    70|    70|  [x] 启用 Git Hooks
+    71|    71|
+    72|    72|配置完成！
+    73|    73|```
+    74|    74|
+    75|    75|### 配置 API Key
+    76|    76|
+    77|    77|根据选择的 Provider 设置对应的 API Key：
+    78|    78|
+    79|    79|```bash
+    80|    80|# DeepSeek
+    81|    81|export DEEPSEEK_API_KEY=***
+    82|    82|
+    83|    83|# OpenRouter
+    84|    84|export OPENROUTER_API_KEY=sk-or-...xxxx
+    85|    85|
+    86|    86|# Anthropic
+    87|    87|export ANTHROPIC_API_KEY=sk-ant...xxxx
+    88|    88|
+    89|    89|# OpenAI
+    90|    90|export OPENAI_API_KEY=***
+    91|    91|```
+    92|    92|
+    93|    93|### 验证安装
+    94|    94|
+    95|    95|```bash
+    96|    96|# 测试是否正常工作
+    97|    97|openclaw "Say hello"
+    98|    98|
+    99|    99|# 查看配置
+   100|   100|openclaw config list
+   101|   101|
+   102|   102|# 查看已加载的技能
+   103|   103|openclaw skills list
+   104|   104|```
+   105|   105|
+   106|   106|## 核心功能
+   107|   107|
+   108|   108|### 极简配置
+   109|   109|
+   110|   110|OpenClaw 的配置流程是所有 Agent 中最简单的：
+   111|   111|
+   112|   112|- **Provider 选择**：选择一个 LLM 后端
+   113|   113|- **技能勾选**：勾选需要的技能
+   114|   114|- **Hooks 开关**：选择是否启用 Shell 集成
+   115|   115|- 完成
+   116|   116|
+   117|   117|不需要写配置文件，不需要申请多个 Token，不需要配置消息平台。
+   118|   118|
+   119|   119|### 技能系统
+   120|   120|
+   121|   121|OpenClaw 支持多种内置技能：
+   122|   122|
+   123|   123|**github 技能：**
+   124|   124|```bash
+   125|   125|openclaw "查看这个仓库的最近 5 个 PR"
+   126|   126|openclaw "创建一个 Issue：修复登录页面的样式问题"
+   127|   127|openclaw "Review PR #42 的代码"
+   128|   128|```
+   129|   129|
+   130|   130|**gh-issues 技能：**
+   131|   131|```bash
+   132|   132|openclaw "列出所有 open 状态的 Issue"
+   133|   133|openclaw "给 Issue #123 加上 bug 标签"
+   134|   134|openclaw "关闭 Issue #456"
+   135|   135|```
+   136|   136|
+   137|   137|**nano-pdf 技能：**
+   138|   138|```bash
+   139|   139|openclaw "提取这个 PDF 的第三页内容"
+   140|   140|openclaw "修改 PDF 中的错别字"
+   141|   141|```
+   142|   142|
+   143|   143|**xurl 技能：**
+   144|   144|```bash
+   145|   145|openclaw "发一条推文：今天学到了新的 AI 工具"
+   146|   146|openclaw "搜索关于 AI Agent 的最新推文"
+   147|   147|```
+   148|   148|
+   149|   149|### Hooks 集成
+   150|   150|
+   151|   151|OpenClaw 支持 Hooks（Shell 集成），可以在特定事件触发时自动执行操作：
+   152|   152|
+   153|   153|```bash
+   154|   154|# Git commit 时自动运行
+   155|   155|openclaw hooks install
+   156|   156|
+   157|   157|# 之后每次 git commit 会自动：
+   158|   158|# 1. 检查代码风格
+   159|   159|# 2. 运行测试
+   160|   160|# 3. 生成 commit message 建议
+   161|   161|```
+   162|   162|
+   163|   163|### 代码编写
+   164|   164|
+   165|   165|```bash
+   166|   166|# 交互式
+   167|   167|openclaw
+   168|   168|> 给 UserController 加一个分页查询接口
+   169|   169|
+   170|   170|# 一次性执行
+   171|   171|openclaw "为这个函数写单元测试"
+   172|   172|openclaw "把这段代码改成 async/await 风格"
+   173|   173|```
+   174|   174|
+   175|   175|### 文件操作
+   176|   176|
+   177|   177|```bash
+   178|   178|openclaw "分析这个 CSV 文件，生成统计报告"
+   179|   179|openclaw "把这个 JSON 文件转换成 YAML 格式"
+   180|   180|openclaw "找出这个目录下所有大于 10MB 的文件"
+   181|   181|```
+   182|   182|
+   183|   183|## 使用场景
+   184|   184|
+   185|   185|### 快速上手
+   186|   186|
+   187|   187|如果你只是想快速试试 AI Agent，OpenClaw 是最简单的选择：
+   188|   188|
+   189|   189|```bash
+   190|   190|# 3 步配置
+   191|   191|openclaw setup
+   192|   192|
+   193|   193|# 开始使用
+   194|   194|openclaw "帮我写一个 Hello World 的 Python 脚本"
+   195|   195|```
+   196|   196|
+   197|   197|### 轻量任务
+   198|   198|
+   199|   199|适合简单的代码编写、文件操作、Git 操作等：
+   200|   200|
+   201|   201|```bash
+   202|   202|openclaw "给这个函数加类型注解"
+   203|   203|openclaw "生成一个 .gitignore 文件"
+   204|   204|openclaw "分析这个项目的依赖树"
+   205|   205|```
+   206|   206|
+   207|   207|### GitHub 操作
+   208|   208|
+   209|   209|```bash
+   210|   210|openclaw "查看这个仓库的最近 PR"
+   211|   211|openclaw "创建一个 Issue"
+   212|   212|openclaw "Review PR #42"
+   213|   213|```
+   214|   214|
+   215|   215|### 日常脚本
+   216|   216|
+   217|   217|```bash
+   218|   218|openclaw "写一个脚本，每天备份数据库"
+   219|   219|openclaw "写一个脚本，监控服务器磁盘空间"
+   220|   220|openclaw "写一个脚本，批量重命名文件"
+   221|   221|```
+   222|   222|
+   223|   223|## 优势
+   224|   224|
+   225|   225|1. **极简配置**：3 步完成配置，不需要写配置文件
+   226|   226|2. **快速上手**：学习成本最低，5 分钟开始使用
+   227|   227|3. **轻量级**：不依赖复杂基础设施，安装即用
+   228|   228|4. **内置技能**：github、gh-issues、nano-pdf、xurl 等常用技能
+   229|   229|5. **Hooks 集成**：Git Hooks 自动化
+   230|   230|6. **与 Hermes 共享基础设施**：部分技能通用
+   231|   231|
+   232|   232|## 定价
+   233|   233|
+   234|   234|OpenClaw 本身免费，费用取决于你选择的 LLM Provider：
+   235|   235|
+   236|   236|| Provider | 价格参考 |
+   237|   237||----------|----------|
+   238|   238|| DeepSeek | ¥1/百万输入 tokens，¥2/百万输出 tokens |
+   239|   239|| OpenRouter | 按模型计费，见 openrouter.ai/pricing |
+   240|   240|| Anthropic | Sonnet: $3/M 输入，$15/M 输出 |
+   241|   241|| OpenAI | GPT-4o: $2.5/M 输入，$10/M 输出 |
+   242|   242|
+   243|   243|## 不足
+   244|   244|
+   245|   245|- 功能相对简单，没有持久记忆
+   246|   246|- 没有消息平台集成，只能在终端使用
+   247|   247|- 没有 Cron 定时任务
+   248|   248|- 没有 MCP 支持
+   249|   249|- 没有浏览器能力
+   250|   250|- 与 Hermes Agent 共用同一套凭证会冲突，不能同时运行
+   251|   251|- 技能数量有限，扩展性不如 Hermes
+   252|   252|- 文档较少，社区还在成长
+   253|   253|
+   254|   254|---
+   255|   255|
+   256|   256|> OpenClaw 适合想快速上手试试 AI Agent 的开发者。配置越简单越好，功能够用就行。如果你需要更强大的功能，可以后续迁移到 Hermes Agent。
+   257|   257|
+   258|
+   259|
+   260|
+---
 
 ---
 
-<div class="disclaimer">
+> **免责声明：** 本文仅供学习交流，不构成任何商业推荐。软件功能、定价等信息可能随版本更新而变化，请以官方最新信息为准。文中涉及的商标、产品名称归各自所有者所有。
 
-**免责声明：** 本文仅供学习交流，不构成任何商业推荐。软件功能、定价等信息可能随版本更新而变化，请以官方最新信息为准。文中涉及的商标、产品名称归各自所有者所有。
-
-</div>
+   267|
