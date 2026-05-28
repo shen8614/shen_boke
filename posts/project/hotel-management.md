@@ -234,4 +234,4 @@ public void updateStatistics() {
 
 ---
 
-> 项目地址：[GitHub 仓库](https://github.com/)
+> 项目下载：[hotel-management.zip](/shen_boke/upload/hotel-management.zip)
