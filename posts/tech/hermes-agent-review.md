@@ -1,207 +1,200 @@
-     1|     1|---
-     2|     2|title: Hermes Agent 深度体验：不只是 Coding Agent
-     3|     3|date: 2026-05-25
-     4|     4|tags:
-     5|     5|  - AI Agent
-     6|     6|  - Hermes Agent
-     7|     7|  - 自动化
-     8|     8|  - 效率工具
-     9|     9|categories:
-    10|    10|  - 技术学习
-    11|    11|description: 使用 Hermes Agent 三个月的真实体验，从终端编程到消息平台自动化，它如何改变我的工作方式。
-    12|    12|---
-    13|    13|
-    14|    14|# Hermes Agent 深度体验：不只是 Coding Agent
-    15|    15|
-    16|    16|## 为什么选 Hermes
-    17|    17|
-    18|    18|```mermaid
-    19|    19|graph TB
-    20|    20|    subgraph IN[接入层]
-    21|    21|        CLI[终端] ~~~ TG[TG/QQ]
-    22|    22|        DC[Discord] ~~~ WX[微信]
-    23|    23|    end
-    24|    24|    IN --> CORE[Hermes Agent 核心引擎]
-    25|    25|    CORE --> LLM[20+ LLM Provider]
-    26|    26|    CORE --> TOOL[工具：代码/Shell/搜索/文件]
-    27|    27|    CORE --> MEM[持久记忆 + 技能库]
-    28|    28|    CORE --> CRON[Cron 定时调度]
-    29|    29|
-    30|    30|    style IN fill:#eef2ff,stroke:#a5b4fc
-    31|    31|    style CORE fill:#ecfdf5,stroke:#86efac
-    32|    32|    style LLM fill:#faf5ff,stroke:#c084fc
-    33|    33|```
-    34|    34|
-    35|    35|市面上的 AI Coding Agent 大多只做一件事——在终端里帮你写代码。Claude Code 写代码很强，Codex 沙箱执行很安全，OpenCode 模型选择很灵活。但我的需求不只是写代码：我希望 AI 能帮我管理定时任务、在 QQ 上回答问题、自动监控 GitHub 仓库、甚至控制智能家居。
-    36|    36|
-    37|    37|Hermes Agent 是我找到的唯一一个能满足这些需求的工具。它不是一个 Coding Agent，而是一个通用的 AI 自治代理框架——Coding 只是它的能力之一。
-    38|    38|
-    39|    39|## 安装与配置
-    40|    40|
-    41|    41|```bash
-    42|    42|# 一键安装
-    43|    43|curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash
-    44|    44|
-    45|    45|# 交互式配置向导
-    46|    46|hermes setup
-    47|    47|
-    48|    48|# 选择模型和 Provider
-    49|    49|hermes model
-    50|    50|
-    51|    51|# 检查环境
-    52|    52|hermes doctor
-    53|    53|```
-    54|    54|
-    55|    55|Hermes 支持 20+ 个 LLM Provider，我用的是 DeepSeek（性价比高）。配置文件在 `~/.hermes/config.yaml`，API Key 在 `~/.hermes/.env`。
-    56|    56|
-    57|    57|## 核心体验
-    58|    58|
-    59|    59|### 1. 技能系统：AI 会"学习"
-    60|    60|
-    61|    61|这是 Hermes 最独特的能力。当它解决了一个复杂问题、发现了一个工作流、或者被你纠正了做法，可以把经验保存为"技能"（Skill）。技能是一份 Markdown 文档，包含操作步骤、注意事项、验证方法。下次遇到类似任务时，Hermes 会自动加载相关技能。
-    62|    62|
-    63|    63|举个例子：我第一次让 Hermes 帮我用 draw.io 画 ER 图时，它踩了不少坑（ID 重复、元素重叠、线条交叉）。我纠正了几次后，它主动把这些经验保存成了一个技能。之后再画图就直接用正确的方式了。
-    64|    64|
-    65|    65|```bash
-    66|    66|# 查看已安装的技能
-    67|    67|hermes skills list
-    68|    68|
-    69|    69|# 从技能库安装
-    70|    70|hermes skills install er-diagram-drawio
-    71|    71|
-    72|    72|# 搜索技能
-    73|    73|hermes skills search "database"
-    74|    74|```
-    75|    75|
-    76|    76|### 2. 持久记忆：跨会话的"大脑"
-    77|    77|
-    78|    78|Hermes 的记忆系统分两层：
-    79|    79|
-    80|    80|- **用户画像**：你的名字、角色、偏好、习惯
-    81|    81|- **环境笔记**：工具配置、项目约定、踩坑经验
-    82|    82|
-    83|    83|这些记忆在每次会话开始时自动注入 system prompt，所以 Hermes 总是"记得"你之前告诉它的事情。不需要每次都重复说明你的技术栈、代码风格、或者常用路径。
-    84|    84|
-    85|    85|```bash
-    86|    86|# 查看当前记忆
-    87|    87|# 在会话中直接说"记住这个"
-    88|    88|
-    89|    89|# 管理记忆
-    90|    90|hermes memory setup
-    91|    91|```
-    92|    92|
-    93|    93|### 3. 消息网关：AI 在你身边
-    94|    94|
-    95|    95|这是我用得最多的功能。Hermes 可以同时接入多个消息平台——Telegram、Discord、Slack、QQ、微信等。同一个 AI 实例，在终端里帮你写代码，在 QQ 上回答朋友的技术问题，在 Telegram 里推送每日摘要。
-    96|    96|
-    97|    97|```bash
-    98|    98|# 配置消息平台
-    99|    99|hermes gateway setup
-   100|   100|
-   101|   101|# 启动网关
-   102|   102|hermes gateway run
-   103|   103|
-   104|   104|# 安装为后台服务
-   105|   105|hermes gateway install
-   106|   106|```
-   107|   107|
-   108|   108|我给 Hermes 接了 QQ Bot，朋友们可以直接在群里 @它问技术问题。它能读代码、搜网页、甚至帮他们 debug。
-   109|   109|
-   110|   110|### 4. Cron 定时任务
-   111|   111|
-   112|   112|Hermes 内置了定时任务调度器，支持 cron 表达式、间隔时间、自然语言描述。
-   113|   113|
-   114|   114|```bash
-   115|   115|# 创建定时任务
-   116|   116|hermes cron create "0 9 * * *" --prompt "查看 GitHub Issues 并推送摘要到 Telegram"
-   117|   117|
-   118|   118|# 查看所有任务
-   119|   119|hermes cron list
-   120|   120|
-   121|   121|# 手动触发
-   122|   122|hermes cron run <job_id>
-   123|   123|```
-   124|   124|
-   125|   125|我设置了几个常用的：
-   126|   126|- 每天早上 9 点推送 GitHub 通知
-   127|   127|- 每周一生成项目进度报告
-   128|   128|- 每小时检查一次服务器状态
-   129|   129|
-   130|   130|### 5. 子 Agent 编排
-   131|   131|
-   132|   132|对于复杂任务，Hermes 可以拆分成多个子任务并行执行。每个子任务在一个独立的子 Agent 中运行，有自己的上下文和工具集，互不干扰。
-   133|   133|
-   134|   134|比如我说"帮我重构这个项目的数据库层，同时更新 API 文档"，Hermes 会拆成两个子 Agent 并行跑，最后汇总结果。这比单线程顺序执行快很多。
-   135|   135|
-   136|   136|### 6. Profile 多实例
-   137|   137|
-   138|   138|Hermes 支持多个 Profile，每个 Profile 有独立的配置、会话、技能和记忆。我用一个 Profile 做日常开发，另一个 Profile 做自动化任务，互不干扰。
-   139|   139|
-   140|   140|```bash
-   141|   141|# 创建新 Profile
-   142|   142|hermes profile create work --clone-all
-   143|   143|
-   144|   144|# 切换 Profile
-   145|   145|hermes profile use work
-   146|   146|
-   147|   147|# 用指定 Profile 启动
-   148|   148|hermes --profile work
-   149|   149|```
-   150|   150|
-   151|   151|## 实际使用场景
-   152|   152|
-   153|   153|### 场景 1：全栈开发
-   154|   154|
-   155|   155|用 Claude Code 式的方式写代码，但更强。Hermes 能读写文件、执行命令、搜索代码、调用 API。配合技能系统，它会越用越顺手。
-   156|   156|
-   157|   157|### 场景 2：论文辅助
-   158|   158|
-   159|   159|上传论文 PDF，让它翻译、总结、分析。Hermes 支持文件上传和 OCR，能处理图片和文档。
-   160|   160|
-   161|   161|### 场景 3：项目管理
-   162|   162|
-   163|   163|用 Kanban 看板管理多 Agent 协作。创建任务、分配给不同 Agent、跟踪进度。适合需要多人/多 Agent 协作的大型项目。
-   164|   164|
-   165|   165|### 场景 4：信息聚合
-   166|   166|
-   167|   167|定时抓取博客、RSS、GitHub 动态，汇总推送到消息平台。不用自己写爬虫，告诉 Hermes 你要监控什么就行。
-   168|   168|
-   169|   169|### 场景 5：智能家居
-   170|   170|
-   171|   171|通过 Home Assistant 集成，用自然语言控制家里的灯、空调、扫地机器人。"把客厅灯调暗一点"，Hermes 直接执行。
-   172|   172|
-   173|   173|## 和其他工具的配合
-   174|   174|
-   175|   175|Hermes 不是孤立使用的。我的日常工作流：
-   176|   176|
-   177|   177|1. **Claude Code**：写代码、重构、Review PR
-   178|   178|2. **Hermes Agent**：管理自动化、消息平台、定时任务、记忆
-   179|   179|3. **Cursor**：日常 IDE 编辑，AI 补全
-   180|   180|
-   181|   181|三者各司其职。Claude Code 做深度编码，Hermes 做全栈自动化，Cursor 做日常编辑。Hermes 的子 Agent 编排能力甚至可以调用 Claude Code——把编码任务委派给它执行。
-   182|   182|
-   183|   183|## 不足之处
-   184|   184|
-   185|   185|- **学习曲线**：功能太多，配置项也多，新手容易迷路
-   186|   186|- **资源占用**：作为 Python 应用，内存占用比 Claude Code（Node.js）高一些
-   187|   187|- **文档不够完善**：部分高级功能的文档还在建设中
-   188|   188|- **模型依赖**：核心能力取决于底层 LLM，换模型后体验可能不同
-   189|   189|
-   190|   190|## 总结
-   191|   191|
-   192|   192|Hermes Agent 不是"又一个 Coding Agent"，它是一个 AI 自治代理平台。如果你只需要写代码，Claude Code 或 Codex 可能更专注更好用。但如果你想要一个能写代码、能管消息、能定时执行、能跨平台运行、能记住你偏好的全能 AI 助手，Hermes 是目前最好的选择。
-   193|   193|
-   194|   194|---
-   195|   195|
-   196|   196|> 三个月用下来，Hermes 已经从"工具"变成了"搭档"。它记得我的项目结构、代码风格、常用命令，甚至知道我喜欢简洁的回复。这种"越用越懂你"的体验，是其他工具给不了的。
-   197|   197|
-   198|
-   199|
-   200|
 ---
+title: Hermes Agent 深度体验：不只是 Coding Agent
+date: 2026-05-25
+tags:
+  - AI Agent
+  - Hermes Agent
+  - 自动化
+  - 效率工具
+categories:
+  - 技术学习
+description: 使用 Hermes Agent 三个月的真实体验，从终端编程到消息平台自动化，它如何改变我的工作方式。
+---
+
+# Hermes Agent 深度体验：不只是 Coding Agent
+
+## 为什么选 Hermes
+
+```mermaid
+graph TB
+    subgraph IN[接入层]
+        CLI[终端] ~~~ TG[TG/QQ]
+        DC[Discord] ~~~ WX[微信]
+    end
+    IN --> CORE[Hermes Agent 核心引擎]
+    CORE --> LLM[20+ LLM Provider]
+    CORE --> TOOL[工具：代码/Shell/搜索/文件]
+    CORE --> MEM[持久记忆 + 技能库]
+    CORE --> CRON[Cron 定时调度]
+
+    style IN fill:#eef2ff,stroke:#a5b4fc
+    style CORE fill:#ecfdf5,stroke:#86efac
+    style LLM fill:#faf5ff,stroke:#c084fc
+```
+
+市面上的 AI Coding Agent 大多只做一件事——在终端里帮你写代码。Claude Code 写代码很强，Codex 沙箱执行很安全，OpenCode 模型选择很灵活。但我的需求不只是写代码：我希望 AI 能帮我管理定时任务、在 QQ 上回答问题、自动监控 GitHub 仓库、甚至控制智能家居。
+
+Hermes Agent 是我找到的唯一一个能满足这些需求的工具。它不是一个 Coding Agent，而是一个通用的 AI 自治代理框架——Coding 只是它的能力之一。
+
+## 安装与配置
+
+```bash
+# 一键安装
+curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash
+
+# 交互式配置向导
+hermes setup
+
+# 选择模型和 Provider
+hermes model
+
+# 检查环境
+hermes doctor
+```
+
+Hermes 支持 20+ 个 LLM Provider，我用的是 DeepSeek（性价比高）。配置文件在 `~/.hermes/config.yaml`，API Key 在 `~/.hermes/.env`。
+
+## 核心体验
+
+### 1. 技能系统：AI 会"学习"
+
+这是 Hermes 最独特的能力。当它解决了一个复杂问题、发现了一个工作流、或者被你纠正了做法，可以把经验保存为"技能"（Skill）。技能是一份 Markdown 文档，包含操作步骤、注意事项、验证方法。下次遇到类似任务时，Hermes 会自动加载相关技能。
+
+举个例子：我第一次让 Hermes 帮我用 draw.io 画 ER 图时，它踩了不少坑（ID 重复、元素重叠、线条交叉）。我纠正了几次后，它主动把这些经验保存成了一个技能。之后再画图就直接用正确的方式了。
+
+```bash
+# 查看已安装的技能
+hermes skills list
+
+# 从技能库安装
+hermes skills install er-diagram-drawio
+
+# 搜索技能
+hermes skills search "database"
+```
+
+### 2. 持久记忆：跨会话的"大脑"
+
+Hermes 的记忆系统分两层：
+
+- **用户画像**：你的名字、角色、偏好、习惯
+- **环境笔记**：工具配置、项目约定、踩坑经验
+
+这些记忆在每次会话开始时自动注入 system prompt，所以 Hermes 总是"记得"你之前告诉它的事情。不需要每次都重复说明你的技术栈、代码风格、或者常用路径。
+
+```bash
+# 查看当前记忆
+# 在会话中直接说"记住这个"
+
+# 管理记忆
+hermes memory setup
+```
+
+### 3. 消息网关：AI 在你身边
+
+这是我用得最多的功能。Hermes 可以同时接入多个消息平台——Telegram、Discord、Slack、QQ、微信等。同一个 AI 实例，在终端里帮你写代码，在 QQ 上回答朋友的技术问题，在 Telegram 里推送每日摘要。
+
+```bash
+# 配置消息平台
+hermes gateway setup
+
+# 启动网关
+hermes gateway run
+
+# 安装为后台服务
+hermes gateway install
+```
+
+我给 Hermes 接了 QQ Bot，朋友们可以直接在群里 @它问技术问题。它能读代码、搜网页、甚至帮他们 debug。
+
+### 4. Cron 定时任务
+
+Hermes 内置了定时任务调度器，支持 cron 表达式、间隔时间、自然语言描述。
+
+```bash
+# 创建定时任务
+hermes cron create "0 9 * * *" --prompt "查看 GitHub Issues 并推送摘要到 Telegram"
+
+# 查看所有任务
+hermes cron list
+
+# 手动触发
+hermes cron run <job_id>
+```
+
+我设置了几个常用的：
+- 每天早上 9 点推送 GitHub 通知
+- 每周一生成项目进度报告
+- 每小时检查一次服务器状态
+
+### 5. 子 Agent 编排
+
+对于复杂任务，Hermes 可以拆分成多个子任务并行执行。每个子任务在一个独立的子 Agent 中运行，有自己的上下文和工具集，互不干扰。
+
+比如我说"帮我重构这个项目的数据库层，同时更新 API 文档"，Hermes 会拆成两个子 Agent 并行跑，最后汇总结果。这比单线程顺序执行快很多。
+
+### 6. Profile 多实例
+
+Hermes 支持多个 Profile，每个 Profile 有独立的配置、会话、技能和记忆。我用一个 Profile 做日常开发，另一个 Profile 做自动化任务，互不干扰。
+
+```bash
+# 创建新 Profile
+hermes profile create work --clone-all
+
+# 切换 Profile
+hermes profile use work
+
+# 用指定 Profile 启动
+hermes --profile work
+```
+
+## 实际使用场景
+
+### 场景 1：全栈开发
+
+用 Claude Code 式的方式写代码，但更强。Hermes 能读写文件、执行命令、搜索代码、调用 API。配合技能系统，它会越用越顺手。
+
+### 场景 2：论文辅助
+
+上传论文 PDF，让它翻译、总结、分析。Hermes 支持文件上传和 OCR，能处理图片和文档。
+
+### 场景 3：项目管理
+
+用 Kanban 看板管理多 Agent 协作。创建任务、分配给不同 Agent、跟踪进度。适合需要多人/多 Agent 协作的大型项目。
+
+### 场景 4：信息聚合
+
+定时抓取博客、RSS、GitHub 动态，汇总推送到消息平台。不用自己写爬虫，告诉 Hermes 你要监控什么就行。
+
+### 场景 5：智能家居
+
+通过 Home Assistant 集成，用自然语言控制家里的灯、空调、扫地机器人。"把客厅灯调暗一点"，Hermes 直接执行。
+
+## 和其他工具的配合
+
+Hermes 不是孤立使用的。我的日常工作流：
+
+1. **Claude Code**：写代码、重构、Review PR
+2. **Hermes Agent**：管理自动化、消息平台、定时任务、记忆
+3. **Cursor**：日常 IDE 编辑，AI 补全
+
+三者各司其职。Claude Code 做深度编码，Hermes 做全栈自动化，Cursor 做日常编辑。Hermes 的子 Agent 编排能力甚至可以调用 Claude Code——把编码任务委派给它执行。
+
+## 不足之处
+
+- **学习曲线**：功能太多，配置项也多，新手容易迷路
+- **资源占用**：作为 Python 应用，内存占用比 Claude Code（Node.js）高一些
+- **文档不够完善**：部分高级功能的文档还在建设中
+- **模型依赖**：核心能力取决于底层 LLM，换模型后体验可能不同
+
+## 总结
+
+Hermes Agent 不是"又一个 Coding Agent"，它是一个 AI 自治代理平台。如果你只需要写代码，Claude Code 或 Codex 可能更专注更好用。但如果你想要一个能写代码、能管消息、能定时执行、能跨平台运行、能记住你偏好的全能 AI 助手，Hermes 是目前最好的选择。
+
+---
+
+> 三个月用下来，Hermes 已经从"工具"变成了"搭档"。它记得我的项目结构、代码风格、常用命令，甚至知道我喜欢简洁的回复。这种"越用越懂你"的体验，是其他工具给不了的。
 
 ---
 
 > **免责声明：** 本文仅供学习交流，不构成任何商业推荐。软件功能、定价等信息可能随版本更新而变化，请以官方最新信息为准。文中涉及的商标、产品名称归各自所有者所有。
-
-   207|
