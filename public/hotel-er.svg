@@ -122,66 +122,66 @@
 <text x="120" y="254" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">拥有</text>
 <line x1="120" y1="142" x2="80" y2="250" stroke="#9ca3af" stroke-width="1.2"/>
 <line x1="160" y1="250" x2="120" y2="358" stroke="#9ca3af" stroke-width="1.2"/>
-<text x="128" y="136" font-size="11" font-weight="700" fill="#dc2626">1</text>
-<text x="128" y="372" font-size="11" font-weight="700" fill="#dc2626">N</text>
+<text x="100" y="154" font-size="11" font-weight="700" fill="#dc2626">1</text>
+<text x="139" y="345" font-size="11" font-weight="700" fill="#dc2626">N</text>
 <polygon points="120,487 160,510 120,533 80,510" fill="#fce7f3" stroke="#ec4899" stroke-width="1.3"/>
 <text x="120" y="514" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">分类</text>
 <line x1="120" y1="402" x2="80" y2="510" stroke="#9ca3af" stroke-width="1.2"/>
 <line x1="160" y1="510" x2="120" y2="618" stroke="#9ca3af" stroke-width="1.2"/>
-<text x="128" y="396" font-size="11" font-weight="700" fill="#dc2626">1</text>
-<text x="128" y="632" font-size="11" font-weight="700" fill="#dc2626">N</text>
+<text x="100" y="414" font-size="11" font-weight="700" fill="#dc2626">1</text>
+<text x="139" y="605" font-size="11" font-weight="700" fill="#dc2626">N</text>
 <polygon points="460,227 500,250 460,273 420,250" fill="#fce7f3" stroke="#ec4899" stroke-width="1.3"/>
 <text x="460" y="254" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">提交</text>
 <line x1="460" y1="142" x2="420" y2="250" stroke="#9ca3af" stroke-width="1.2"/>
 <line x1="500" y1="250" x2="460" y2="358" stroke="#9ca3af" stroke-width="1.2"/>
-<text x="468" y="136" font-size="11" font-weight="700" fill="#dc2626">1</text>
-<text x="468" y="372" font-size="11" font-weight="700" fill="#dc2626">N</text>
+<text x="440" y="154" font-size="11" font-weight="700" fill="#dc2626">1</text>
+<text x="479" y="345" font-size="11" font-weight="700" fill="#dc2626">N</text>
 <polygon points="460,487 500,510 460,533 420,510" fill="#fce7f3" stroke="#ec4899" stroke-width="1.3"/>
 <text x="460" y="514" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">转为</text>
 <line x1="460" y1="402" x2="420" y2="510" stroke="#9ca3af" stroke-width="1.2"/>
 <line x1="500" y1="510" x2="460" y2="618" stroke="#9ca3af" stroke-width="1.2"/>
-<text x="468" y="396" font-size="11" font-weight="700" fill="#dc2626">1</text>
-<text x="468" y="632" font-size="11" font-weight="700" fill="#dc2626">1</text>
+<text x="440" y="414" font-size="11" font-weight="700" fill="#dc2626">1</text>
+<text x="479" y="605" font-size="11" font-weight="700" fill="#dc2626">1</text>
 <polygon points="780,487 820,510 780,533 740,510" fill="#fce7f3" stroke="#ec4899" stroke-width="1.3"/>
 <text x="780" y="514" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">产生</text>
 <line x1="514" y1="618" x2="740" y2="510" stroke="#9ca3af" stroke-width="1.2"/>
 <line x1="820" y1="510" x2="1045" y2="402" stroke="#9ca3af" stroke-width="1.2"/>
-<text x="498" y="610" font-size="11" font-weight="700" fill="#dc2626">1</text>
-<text x="1053" y="394" font-size="11" font-weight="700" fill="#dc2626">N</text>
+<text x="536" y="622" font-size="11" font-weight="700" fill="#dc2626">1</text>
+<text x="1022" y="397" font-size="11" font-weight="700" fill="#dc2626">N</text>
 <polygon points="780,617 820,640 780,663 740,640" fill="#fce7f3" stroke="#ec4899" stroke-width="1.3"/>
 <text x="780" y="644" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">结算</text>
 <line x1="525" y1="640" x2="740" y2="640" stroke="#9ca3af" stroke-width="1.2"/>
 <line x1="820" y1="640" x2="1035" y2="640" stroke="#9ca3af" stroke-width="1.2"/>
-<text x="509" y="632" font-size="11" font-weight="700" fill="#dc2626">1</text>
-<text x="1043" y="632" font-size="11" font-weight="700" fill="#dc2626">1</text>
+<text x="543" y="654" font-size="11" font-weight="700" fill="#dc2626">1</text>
+<text x="1017" y="626" font-size="11" font-weight="700" fill="#dc2626">1</text>
 <polygon points="630,357 670,380 630,403 590,380" fill="#fce7f3" stroke="#ec4899" stroke-width="1.3"/>
 <text x="630" y="384" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">办理</text>
 <line x1="785" y1="142" x2="590" y2="380" stroke="#9ca3af" stroke-width="1.2"/>
 <line x1="670" y1="380" x2="474" y2="618" stroke="#9ca3af" stroke-width="1.2"/>
-<text x="793" y="136" font-size="11" font-weight="700" fill="#dc2626">1</text>
-<text x="482" y="632" font-size="11" font-weight="700" fill="#dc2626">N</text>
+<text x="762" y="147" font-size="11" font-weight="700" fill="#dc2626">1</text>
+<text x="496" y="613" font-size="11" font-weight="700" fill="#dc2626">N</text>
 <polygon points="950,357 990,380 950,403 910,380" fill="#fce7f3" stroke="#ec4899" stroke-width="1.3"/>
 <text x="950" y="384" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">结账</text>
 <line x1="812" y1="142" x2="910" y2="380" stroke="#9ca3af" stroke-width="1.2"/>
 <line x1="990" y1="380" x2="1087" y2="618" stroke="#9ca3af" stroke-width="1.2"/>
-<text x="820" y="136" font-size="11" font-weight="700" fill="#dc2626">1</text>
-<text x="1095" y="632" font-size="11" font-weight="700" fill="#dc2626">N</text>
+<text x="805" y="163" font-size="11" font-weight="700" fill="#dc2626">1</text>
+<text x="1093" y="596" font-size="11" font-weight="700" fill="#dc2626">N</text>
 <polygon points="1100,227 1140,250 1100,273 1060,250" fill="#fce7f3" stroke="#ec4899" stroke-width="1.3"/>
 <text x="1100" y="254" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">项目</text>
 <line x1="1100" y1="142" x2="1060" y2="250" stroke="#9ca3af" stroke-width="1.2"/>
 <line x1="1140" y1="250" x2="1100" y2="358" stroke="#9ca3af" stroke-width="1.2"/>
-<text x="1108" y="136" font-size="11" font-weight="700" fill="#dc2626">1</text>
-<text x="1108" y="372" font-size="11" font-weight="700" fill="#dc2626">N</text>
+<text x="1080" y="154" font-size="11" font-weight="700" fill="#dc2626">1</text>
+<text x="1119" y="345" font-size="11" font-weight="700" fill="#dc2626">N</text>
 <polygon points="290,487 330,510 290,533 250,510" fill="#fce7f3" stroke="#ec4899" stroke-width="1.3"/>
 <text x="290" y="514" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">分配</text>
 <line x1="148" y1="618" x2="250" y2="510" stroke="#9ca3af" stroke-width="1.2"/>
 <line x1="330" y1="510" x2="431" y2="402" stroke="#9ca3af" stroke-width="1.2"/>
-<text x="132" y="610" font-size="11" font-weight="700" fill="#dc2626">1</text>
-<text x="439" y="394" font-size="11" font-weight="700" fill="#dc2626">N</text>
+<text x="170" y="614" font-size="11" font-weight="700" fill="#dc2626">1</text>
+<text x="408" y="405" font-size="11" font-weight="700" fill="#dc2626">N</text>
 <polygon points="290,357 330,380 290,403 250,380" fill="#fce7f3" stroke="#ec4899" stroke-width="1.3"/>
 <text x="290" y="384" text-anchor="middle" font-size="11" fill="#9d174d" font-style="italic">预订房型</text>
 <line x1="185" y1="380" x2="250" y2="380" stroke="#9ca3af" stroke-width="1.2"/>
 <line x1="330" y1="380" x2="395" y2="380" stroke="#9ca3af" stroke-width="1.2"/>
-<text x="169" y="372" font-size="11" font-weight="700" fill="#dc2626">1</text>
-<text x="403" y="372" font-size="11" font-weight="700" fill="#dc2626">N</text>
+<text x="203" y="394" font-size="11" font-weight="700" fill="#dc2626">1</text>
+<text x="377" y="366" font-size="11" font-weight="700" fill="#dc2626">N</text>
 </svg>
