@@ -344,4 +344,4 @@ CREATE TABLE bills (
 
 ---
 
-> 项目下载：[hotel-management.zip](/shen_boke/upload/hotel-management.zip)
+> 项目下载：[hotel-management.zip](/upload/hotel-management.zip)
