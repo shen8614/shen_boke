@@ -241,8 +241,7 @@
   max-width: 640px;
 }
 
-.mermaid svg,
-.vp-doc img[alt*="ER"] {
+.mermaid svg {
   max-width: 100%;
   height: auto;
   border-radius: var(--radius-lg);
@@ -252,6 +251,15 @@
   transition: box-shadow 0.25s ease;
   display: block;
   margin: 1.5em auto;
+}
+
+.vp-doc img[src$=".svg"] {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5em auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
 }
 
 .mermaid svg:hover {
