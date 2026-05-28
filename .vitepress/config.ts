@@ -8,6 +8,10 @@ export default withMermaid(
     description: '记录技术学习、项目实战与生活感悟',
     lang: 'zh-CN',
     lastUpdated: true,
+    ignoreDeadLinks: [
+      /localhost:\d+/,
+      /127\.0\.0\.1:\d+/,
+    ],
     
     head: [
       ['link', { rel: 'icon', type: 'image/svg+xml', href: '/shen_boke/favicon.svg' }],

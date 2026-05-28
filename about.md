@@ -6,8 +6,6 @@ layout: doc
 
 ## 👋 你好
 
-我是 shen，一名计算机相关专业的学生，正在学习全栈开发。
-
 ## 🛠️ 技术栈
 
 **后端**
@@ -37,9 +35,8 @@ layout: doc
 
 ## 📫 联系方式
 
-- GitHub: [github.com](https://github.com/)
-- Email: your-email@example.com
-
+- GitHub: github.com/shen8614
+- Email: 3756959811@qq.com
 ---
 
 > 这个博客用来记录我的学习过程、项目实战经验和一些生活感悟。希望这些内容能对你有所帮助！
