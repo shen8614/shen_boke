@@ -540,66 +540,114 @@
 }
 
 /* ============================
-   UI Enhancement Layer
-   增强样式 — 保持 Linear/Vercel 美学
+   UI Enhancement Layer v2
+   大胆视觉增强 — 保持 Linear/Vercel 骨架
    ============================ */
 
-/* ---------- 1. 导航栏毛玻璃效果 ---------- */
+/* ---------- 1. 导航栏毛玻璃 + 滚动加深 ---------- */
 .VPNav {
-  background: rgba(250, 251, 252, 0.8) !important;
-  backdrop-filter: blur(12px) saturate(180%);
-  -webkit-backdrop-filter: blur(12px) saturate(180%);
-  border-bottom: 1px solid var(--vp-c-divider);
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
+  background: rgba(250, 251, 252, 0.75) !important;
+  backdrop-filter: blur(16px) saturate(200%);
+  -webkit-backdrop-filter: blur(16px) saturate(200%);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
 }
 
 .dark .VPNav {
-  background: rgba(11, 13, 23, 0.8) !important;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03);
+  background: rgba(11, 13, 23, 0.75) !important;
+  border-bottom-color: rgba(99, 102, 241, 0.12);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* ---------- 2. 阅读进度条样式（全局） ---------- */
-/* ReadingProgress.vue 组件样式已在其 <style scoped> 中 */
+/* ---------- 2. 阅读进度条 ---------- */
+/* ReadingProgress.vue scoped */
 
-/* ---------- 3. 文章链接 hover 增强 ---------- */
+/* ---------- 3. 链接 hover — 品牌色下划线滑入 ---------- */
 .vp-doc a:not(.header-anchor) {
-  transition: all 0.2s ease;
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.vp-doc a:not(.header-anchor):hover {
-  padding-left: 2px;
+.vp-doc a:not(.header-anchor)::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--vp-c-brand), var(--vp-c-brand-light));
+  border-radius: 1px;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ---------- 4. 引用块左侧渐变色条 ---------- */
+.vp-doc a:not(.header-anchor):hover::after {
+  width: 100%;
+}
+
+/* ---------- 4. 引用块 — 渐变色条 + 发光背景 ---------- */
 .vp-doc blockquote {
   border-left: 3px solid transparent !important;
   border-image: linear-gradient(180deg, var(--vp-c-brand), var(--vp-c-brand-light), var(--vp-c-brand-lighter)) 1 !important;
+  background: linear-gradient(135deg, rgba(99,102,241,0.05), rgba(34,211,238,0.03)) !important;
+  box-shadow: inset 3px 0 8px -3px rgba(99, 102, 241, 0.1);
+  transition: all 0.25s ease;
 }
 
-/* ---------- 5. Feature 卡片增强 ---------- */
+.vp-doc blockquote:hover {
+  box-shadow: inset 3px 0 12px -3px rgba(99, 102, 241, 0.18);
+  transform: translateX(2px);
+}
+
+/* ---------- 5. Feature 卡片 — 大胆 3D + 渐变边框 ---------- */
 .VPFeature {
-  perspective: 800px;
+  perspective: 600px;
   transform-style: preserve-3d;
+  border: 1px solid rgba(99, 102, 241, 0.08) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.VPFeature::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--vp-c-brand), var(--vp-c-brand-light), #22d3ee);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.VPFeature:hover::before {
+  opacity: 1;
 }
 
 .VPFeature:hover {
-  transform: translateY(-3px) rotateY(2deg) !important;
-  box-shadow: var(--shadow-lg) !important;
+  transform: translateY(-6px) rotateX(2deg) rotateY(-1deg) !important;
+  box-shadow: 0 12px 40px -8px rgba(99, 102, 241, 0.2), 0 0 0 1px rgba(99, 102, 241, 0.1) !important;
+  border-color: rgba(99, 102, 241, 0.15) !important;
 }
 
-@keyframes iconPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.12); }
+@keyframes iconBounce {
+  0%, 100% { transform: scale(1) translateY(0); }
+  30% { transform: scale(1.15) translateY(-3px); }
+  60% { transform: scale(1.05) translateY(0); }
 }
 
 .VPFeature:hover .icon {
-  animation: iconPulse 0.8s ease-in-out infinite;
+  animation: iconBounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* ---------- 6. 侧边栏增强 ---------- */
+.VPFeature:hover .title {
+  color: var(--vp-c-brand-dark) !important;
+}
+
+/* ---------- 6. 侧边栏 — 活跃态品牌色强化 ---------- */
 .VPSidebar .group .title {
   position: relative;
-  padding-left: 16px !important;
+  padding-left: 18px !important;
 }
 
 .VPSidebar .group .title::before {
@@ -608,70 +656,92 @@
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 4px;
-  height: 4px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
-  background: var(--vp-c-brand);
-  opacity: 0.7;
+  background: linear-gradient(135deg, var(--vp-c-brand), var(--vp-c-brand-light));
+  box-shadow: 0 0 6px rgba(99, 102, 241, 0.3);
 }
 
 .VPSidebar .link.active {
-  border-left: 2px solid var(--vp-c-brand) !important;
-  padding-left: 12px !important;
+  border-left: 3px solid var(--vp-c-brand) !important;
+  padding-left: 11px !important;
+  background: linear-gradient(90deg, rgba(99,102,241,0.08), rgba(99,102,241,0.02)) !important;
+  font-weight: 600;
+  color: var(--vp-c-brand-dark);
 }
 
-/* ---------- 7. 代码块增强 ---------- */
+.VPSidebar .link:hover {
+  background: rgba(99, 102, 241, 0.06) !important;
+  padding-left: 4px;
+  transition: all 0.2s ease;
+}
+
+/* ---------- 7. 代码块 — 顶部品牌色标签 + 内阴影 ---------- */
 .vp-doc div[class*="language-"] {
-  box-shadow: var(--shadow-sm), inset 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+  box-shadow: var(--shadow-sm), inset 0 2px 4px rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid rgba(99, 102, 241, 0.06) !important;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.vp-doc div[class*="language-"]:hover {
+  box-shadow: var(--shadow-md), inset 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+  border-color: rgba(99, 102, 241, 0.12) !important;
 }
 
 .vp-doc div[class*="language-"]::before {
   display: inline-block;
 }
 
-/* 代码块顶部标签样式 */
 .vp-doc div[class*="language-"] > span.lang {
-  background: var(--vp-c-brand) !important;
+  background: linear-gradient(135deg, var(--vp-c-brand), var(--vp-c-brand-light)) !important;
   color: #fff !important;
-  padding: 2px 10px !important;
+  padding: 3px 12px !important;
   border-radius: 6px !important;
   font-size: 0.7em !important;
   font-weight: 600 !important;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
   margin-bottom: 12px;
   display: inline-block;
+  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.2);
 }
 
 .dark .vp-doc div[class*="language-"] {
-  box-shadow: var(--shadow-sm), inset 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+  box-shadow: var(--shadow-sm), inset 0 2px 6px rgba(0, 0, 0, 0.25) !important;
+  border-color: rgba(99, 102, 241, 0.1) !important;
 }
 
-/* ---------- 8. 页面切换动画 ---------- */
+/* ---------- 8. 页面切换 — 更流畅的入场 ---------- */
 .VPContent {
-  animation: fadeInPage 0.4s ease-out;
+  animation: fadeInPage 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @keyframes fadeInPage {
   from {
     opacity: 0;
-    transform: translateY(6px);
+    transform: translateY(12px);
+    filter: blur(2px);
+  }
+  60% {
+    filter: blur(0);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+    filter: blur(0);
   }
 }
 
-/* ---------- 9. 归档时间线样式 ---------- */
+/* ---------- 9. 归档时间线 — 发光圆点 + 滑入 ---------- */
 .archive-timeline {
   position: relative;
-  padding-left: 28px;
+  padding-left: 32px;
 }
 
 .archive-timeline::before {
   content: '';
   position: absolute;
-  left: 6px;
+  left: 7px;
   top: 0;
   bottom: 0;
   width: 2px;
@@ -681,37 +751,50 @@
 
 .archive-item {
   position: relative;
-  padding: 14px 18px;
-  margin-bottom: 12px;
-  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 14px;
+  border-radius: var(--radius-lg);
   background: var(--vp-c-bg-card);
   box-shadow: var(--shadow-sm);
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-left: 2px solid transparent;
+  animation: archiveSlideIn 0.4s ease-out both;
+}
+
+.archive-item:nth-child(1) { animation-delay: 0.05s; }
+.archive-item:nth-child(2) { animation-delay: 0.1s; }
+.archive-item:nth-child(3) { animation-delay: 0.15s; }
+.archive-item:nth-child(4) { animation-delay: 0.2s; }
+.archive-item:nth-child(5) { animation-delay: 0.25s; }
+
+@keyframes archiveSlideIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 .archive-item::before {
   content: '';
   position: absolute;
-  left: -24px;
-  top: 20px;
-  width: 8px;
-  height: 8px;
+  left: -28px;
+  top: 22px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: var(--vp-c-brand);
   border: 2px solid var(--vp-c-bg-card);
-  box-shadow: 0 0 0 2px var(--vp-c-brand-dimm);
-  transition: all 0.2s ease;
+  box-shadow: 0 0 0 3px var(--vp-c-brand-dimm), 0 0 8px rgba(99, 102, 241, 0.15);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .archive-item:hover {
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
   border-left-color: var(--vp-c-brand);
+  transform: translateX(4px);
 }
 
 .archive-item:hover::before {
-  transform: scale(1.3);
-  box-shadow: 0 0 0 4px var(--vp-c-brand-glow);
+  transform: scale(1.4);
+  box-shadow: 0 0 0 5px var(--vp-c-brand-glow), 0 0 14px rgba(99, 102, 241, 0.25);
 }
 
 .archive-date {
@@ -727,18 +810,104 @@
   font-weight: 600;
   font-size: 0.95em;
   color: var(--vp-c-text-1);
-  transition: color 0.15s;
+  transition: all 0.2s ease;
 }
 
 .archive-item:hover .archive-title {
   color: var(--vp-c-brand);
+  padding-left: 4px;
 }
 
-/* ---------- 10. 深色模式额外增强 ---------- */
-.dark .VPFeature:hover {
+/* ---------- 10. Hero 标题 — 动态渐变 + 发光 ---------- */
+.VPHero .name {
+  background-size: 200% 200% !important;
+  animation: gradientShift 6s ease-in-out infinite !important;
+  filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.15));
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ---------- 11. 表格行 — 品牌色滑入 ---------- */
+.vp-doc tbody tr {
+  transition: all 0.2s ease;
+}
+
+.vp-doc tbody tr:hover {
+  background: linear-gradient(90deg, rgba(99,102,241,0.06), rgba(99,102,241,0.02)) !important;
+  transform: scale(1.002);
+}
+
+/* ---------- 12. 按钮 — 品牌色光晕 ---------- */
+.VPButton.brand {
+  position: relative;
+  overflow: hidden;
+}
+
+.VPButton.brand::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.VPButton.brand:hover::before {
+  opacity: 1;
+}
+
+.VPButton.brand:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.35), 0 0 40px rgba(99, 102, 241, 0.1) !important;
+}
+
+.VPButton.brand:active {
+  transform: translateY(0) scale(0.97) !important;
+}
+
+/* ---------- 13. Mermaid 图表 — hover 发光 ---------- */
+.mermaid svg:hover {
   box-shadow: var(--shadow-lg), 0 0 20px rgba(99, 102, 241, 0.08) !important;
+  transform: scale(1.005);
+}
+
+/* ---------- 14. 深色模式增强 ---------- */
+.dark .VPFeature:hover {
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(99, 102, 241, 0.12) !important;
+}
+
+.dark .VPFeature::before {
+  opacity: 0.5;
+}
+
+.dark .VPFeature:hover::before {
+  opacity: 1;
 }
 
 .dark .VPSidebar .link.active {
-  background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(99,102,241,0.04)) !important;
+  background: linear-gradient(90deg, rgba(99,102,241,0.15), rgba(99,102,241,0.04)) !important;
+  border-left-color: var(--vp-c-brand-light) !important;
+}
+
+.dark .VPNav {
+  border-bottom-color: rgba(99, 102, 241, 0.15) !important;
+}
+
+.dark .vp-doc div[class*="language-"]:hover {
+  border-color: rgba(99, 102, 241, 0.18) !important;
+}
+
+/* ---------- 15. 全局滚动条品牌色 ---------- */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(99,102,241,0.2), rgba(99,102,241,0.1)) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(99,102,241,0.35), rgba(99,102,241,0.2)) !important;
 }
