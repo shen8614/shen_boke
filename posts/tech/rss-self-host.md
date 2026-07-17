@@ -56,10 +56,10 @@ RSS（Really Simple Syndication）的哲学完全不同：**你决定看什么�
 
 ## 我的 RSS 基础设施
 
-我目前在 WSL 上通过 Docker 部署了三件套：
+我目前在 WSL 上通过 Docker 部署了双件套：
 
 ```
-FreshRSS + RSSHub + blog-watcher
+FreshRSS + RSSHub
 ```
 
 ### FreshRSS
@@ -132,19 +132,19 @@ http://localhost:1200/zhihu/column/专栏ID
 http://localhost:1200/weibo/user/微博UID
 ```
 
-### blog-watcher
+### 方案三：自定义爬虫生成 RSS
 
-[blog-watcher](https://github.com/shen8614/blog-watcher)（我自己的项目）是一个更底层的手段——当 RSSHub 也覆盖不到某个站点时，直接用爬虫定期抓取页面，提取更新内容，输出 RSS 格式。
+当 RSSHub 不适合时（比如要登录、有反爬、页面结构不规则），可以用自定义脚本定期抓取页面，提取更新内容，输出 RSS 格式。
 
-它的工作模式：
+基本工作模式：
 
 ```mermaid
 graph LR
-    A[目标网站] -->|爬虫定期抓取| B[blog-watcher]
-    B -->|对比缓存的旧内容| C[检测是否有更新]
-    C -->|有更新| D[生成 RSS/Atom Feed]
+    A[目标网站] -->|爬虫定期抓取| B[自定义脚本]
+    B -->|对比缓存内容| C[检测更新]
+    C -->|有更新| D[生成 RSS Feed]
     C -->|无更新| E[跳过]
-    D --> F[FreshRSS 自动抓取]
+    D --> F[FreshRSS 自动拉取]
 
     style A fill:#f9f9f9,stroke:#666
     style F fill:#e3f2fd,stroke:#1976d2
@@ -155,6 +155,8 @@ graph LR
 - 需要登录才能看到内容的页面
 - RSSHub 没有提供路由的小众站点
 - 需要自定义抓取逻辑的场景
+
+实现方式也很简单：写一个 Python 脚本用 requests + BeautifulSoup 爬取，对比上次结果，有更新就输出一个 RSS XML 文件，然后用 FreshRSS 订阅这个文件路径，或者通过 HTTP 服务暴露出去。
 
 ## 如何订阅没有 RSS 的网站？
 
@@ -271,7 +273,7 @@ FreshRSS 配合 Hermes Agent 的 cron 功能，可以定时将未读文章推送
 - **数据完全属于自己**
 - **可定制、可扩展**
 
-对于有 WSL/Docker 环境的开发者来说，FreshRSS + RSSHub + blog-watcher 这套组合拳几乎是"一次部署，终身受益"的投资。
+对于有 WSL/Docker 环境的开发者来说，FreshRSS + RSSHub 这套组合拳几乎是"一次部署，终身受益"的投资。
 
 ---
 
