@@ -52,6 +52,7 @@ blog/
 - Hermes Agent — 全功能自治代理框架
 - MCP 协议 — AI 工具集成新标准
 - 本地大模型部署 — Ollama + Open WebUI 实战
+- RSS 自建阅读体系 — FreshRSS + RSSHub 构建个人信息流
 
 ### 项目实战
 - 酒店管理系统 — Spring Boot + Vue 3 全栈开发

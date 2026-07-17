@@ -47,6 +47,7 @@ export default withMermaid(
               { text: 'AI Agent 开发实践', link: '/posts/tech/ai-agent-development' },
               { text: 'MCP 协议', link: '/posts/tech/mcp-protocol' },
               { text: '本地大模型部署', link: '/posts/tech/local-llm-deployment' },
+              { text: 'RSS 自建阅读体系', link: '/posts/tech/rss-self-host' },
             ]
           },
           {
