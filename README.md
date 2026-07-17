@@ -56,6 +56,7 @@ blog/
 
 ### 项目实战
 - 酒店管理系统 — Spring Boot + Vue 3 全栈开发
+- 自建 IPTV 直播源 — iptv-api 搭建个人电视直播服务
 
 ## 🚀 本地开发
 

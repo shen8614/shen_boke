@@ -55,6 +55,7 @@ export default withMermaid(
             collapsed: false,
             items: [
               { text: '酒店管理系统', link: '/posts/project/hotel-management' },
+              { text: '自建 IPTV 直播源', link: '/posts/project/iptv-self-host' },
             ]
           },
           {
