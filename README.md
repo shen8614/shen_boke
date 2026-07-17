@@ -55,6 +55,8 @@ blog/
 - RSS 自建阅读体系 — FreshRSS + RSSHub 构建个人信息流
 - Hermes 自动化实践 — cron + 消息网关打造个人助理
 - WSL2 网络配置实战 — 代理、DNS、Docker 网络全攻略
+- Ponytail — 让 AI Agent 像 Senior Dev 那样思考
+- Grok Build — SpaceXAI 的全新 Coding Agent
 
 ### 项目实战
 - 酒店管理系统 — Spring Boot + Vue 3 全栈开发

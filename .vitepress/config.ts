@@ -50,6 +50,8 @@ export default withMermaid(
               { text: 'RSS 自建阅读体系', link: '/posts/tech/rss-self-host' },
               { text: 'Hermes 自动化实践', link: '/posts/tech/hermes-automation' },
               { text: 'WSL2 网络配置实战', link: '/posts/tech/wsl-network-guide' },
+              { text: 'Ponytail', link: '/posts/tech/ponytail' },
+              { text: 'Grok Build', link: '/posts/tech/grok-build' },
             ]
           },
           {
