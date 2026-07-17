@@ -53,6 +53,8 @@ blog/
 - MCP 协议 — AI 工具集成新标准
 - 本地大模型部署 — Ollama + Open WebUI 实战
 - RSS 自建阅读体系 — FreshRSS + RSSHub 构建个人信息流
+- Hermes 自动化实践 — cron + 消息网关打造个人助理
+- WSL2 网络配置实战 — 代理、DNS、Docker 网络全攻略
 
 ### 项目实战
 - 酒店管理系统 — Spring Boot + Vue 3 全栈开发

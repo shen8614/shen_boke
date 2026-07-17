@@ -1,6 +1,6 @@
 ---
 title: Hermes Agent 深度体验：不只是 Coding Agent
-date: 2026-05-25
+date: 2026-07-17
 tags:
   - AI Agent
   - Hermes Agent
@@ -8,7 +8,7 @@ tags:
   - 效率工具
 categories:
   - 技术学习
-description: 使用 Hermes Agent 三个月的真实体验，从终端编程到消息平台自动化，它如何改变我的工作方式。
+description: 使用 Hermes Agent 的真实体验，从终端编程到消息平台自动化，附 v0.18.0 "The Judgment Release" 新版评测。
 ---
 
 # Hermes Agent 深度体验：不只是 Coding Agent
@@ -179,6 +179,74 @@ Hermes 不是孤立使用的。我的日常工作流：
 3. **Cursor**：日常 IDE 编辑，AI 补全
 
 三者各司其职。Claude Code 做深度编码，Hermes 做全栈自动化，Cursor 做日常编辑。Hermes 的子 Agent 编排能力甚至可以调用 Claude Code——把编码任务委派给它执行。
+
+## v0.18.0 "The Judgment Release" 更新
+
+2026 年 7 月，Hermes Agent 发布了迄今为止最大的一次更新——v0.18.0。这个版本的代号"Judgment"体现了核心理念：让 Agent 学会判断自己的工作是否真正完成。
+
+### Mixture-of-Agents：专家委员会模式
+
+MoA 现在是一级模型，可以在模型选择器里直接选，像选 Claude、GPT 一样：
+
+```
+# 在 CLI/TUI 中
+/model my-council
+
+# 或者配置文件中
+model: moa:my-council
+```
+
+选好后，你的问题会自动路由到一组模型（比如 Claude + GPT + DeepSeek）组成的"专家委员会"，每个模型独立推理，最终由一个聚合器汇总最佳答案。所有参考模型的思考过程都会展示给你。
+
+这对于需要多角度分析的复杂问题特别有用——架构设计、代码审查、技术方案选型等。
+
+### 自验证机制
+
+Agent 做完任务后会对照证据检查自己的结论。比如写完代码后，它会运行测试、检查编译、验证 API 响应，确认真的跑通了才告诉你"完成了"。
+
+```bash
+# 设置自验证级别
+hermes config set verification.level high   # high/mid/low/off
+```
+
+这解决了一个长期痛点——以前 Agent 经常说"应该可以了"，实际上代码报错。现在它会确认无误再汇报。
+
+### Background Subagents
+
+复杂任务可以拆解后让子 Agent 在后台并行执行，不阻塞当前对话：
+
+```
+# 交给子 Agent 在后台跑
+帮我重构这个模块的数据库层，完成后通知我
+```
+
+当前会话继续用，子 Agent 完成后结果会作为新消息送达。适合耗时操作——大型重构、批量测试、数据迁移等。
+
+### /learn 和 /journey
+
+Hermes 新增了自我改进的命令：
+
+```
+# 从当前对话提取经验保存为技能
+/learn "在处理 Docker 网络问题时发现 portproxy 会占端口"
+
+# 查看自我改进记录
+/journey
+```
+
+`/journey` 以时间线形式展示你教会 Hermes 的所有技能和记忆变化，清晰看到它在哪些方面成长了。
+
+### Gateway 生产级部署
+
+Gateway 新增了 scale-to-zero（无流量时自动休眠）和 drain coordination（平滑升级），可以真正用于生产环境。
+
+```bash
+# 生产模式启动
+hermes gateway run --production --scale-to-zero
+
+# 查看 gateway 状态
+hermes gateway status
+```
 
 ## 不足之处
 
